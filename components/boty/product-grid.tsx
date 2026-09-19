@@ -121,9 +121,9 @@ export function ProductGrid() {
                 href={`/product/${product.id}`}
                 className="group block h-full"
               >
-                <div className="bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xs hover:shadow-xl card-hover-lift boty-transition group-hover:scale-[1.01] flex flex-col h-full items-center text-center">
+                <div className="bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xs hover:shadow-xl card-hover-lift boty-transition group-hover:scale-[1.01] flex flex-col h-full text-center">
                   {/* Image */}
-                  <div className="relative aspect-square bg-muted overflow-hidden">
+                  <div className="relative aspect-square w-full bg-muted overflow-hidden">
                     <Image
                       src={product.image || "/placeholder.jpg"}
                       alt={product.name}
@@ -164,7 +164,7 @@ export function ProductGrid() {
                   </div>
 
                   {/* Info - Center Aligned */}
-                  <div className="p-3 sm:p-5 text-center flex flex-col flex-grow items-center justify-between">
+                  <div className="p-3 sm:p-5 text-center flex flex-col flex-grow items-center justify-between w-full">
                     <div>
                       <h3 className="font-serif text-sm sm:text-lg text-foreground mb-1 group-hover:text-primary boty-transition line-clamp-1 font-medium">{product.name}</h3>
                       <p className="text-[11px] sm:text-xs text-muted-foreground mb-2 sm:mb-3 line-clamp-1">{product.tagline}</p>
