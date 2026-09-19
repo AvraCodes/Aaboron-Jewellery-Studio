@@ -65,14 +65,21 @@ export function ProductGrid() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16">
-          <span className={`text-sm tracking-[0.3em] uppercase text-primary mb-4 block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
-            Our Collection
-          </span>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <span className={`text-sm tracking-[0.3em] uppercase text-primary block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
+              Our Collection
+            </span>
+            <span className="text-foreground/30 text-xs">·</span>
+            <span className="font-bengali text-xs tracking-widest text-primary/75 font-medium select-none">
+              গ্যালারি
+            </span>
+          </div>
           <h2 className={`font-display leading-tight text-foreground mb-4 text-balance text-5xl md:text-7xl ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
             Made by hand
           </h2>
           <p className={`text-lg text-muted-foreground max-w-md mx-auto ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.6s', animationFillMode: 'forwards' } : {}}>
-            Each piece is shaped slowly, with care — no two are ever exactly alike.
+            <span className="font-accent italic block text-base text-foreground/80 mb-0.5">Slow-crafted ornaments of Bengal —</span>
+            Each piece is shaped slowly, with care, one at a time.
           </p>
         </div>
 

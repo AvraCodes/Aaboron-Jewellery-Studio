@@ -30,11 +30,34 @@ const ypsilanti = localFont({
   display: 'swap',
 });
 
+const lipiPalash = localFont({
+  src: './fonts/LipiPalash-Unicode.ttf',
+  variable: '--font-bengali',
+  display: 'swap',
+});
+
+const adrianaGabrielle = localFont({
+  src: [
+    {
+      path: './fonts/AdrianaGabrielle-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/AdrianaGabrielle-Italic.otf',
+      weight: '400',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-accent',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  title: 'Artisnal Gallery — Handmade Jewellery',
-  description: 'Handcrafted clay pendants, clay earrings, and oxidised jewellery. Made with care, one piece at a time.',
+  title: 'Aaboron — Handmade Jewellery Studio',
+  description: 'Aaboron (আবরণ) — Handmade artisanal jewellery shaped with intention. Rooted in Bengali craft, offering clay jewellery sets, handmade pendants, and oxidised earrings.',
   generator: 'v0.app',
-  keywords: ['handmade jewellery', 'clay pendants', 'clay earrings', 'oxidised earrings', 'artisanal jewellery', 'handcrafted'],
+  keywords: ['Aaboron', 'Aaboron Jewellery Studio', 'handmade jewellery', 'clay pendants', 'clay earrings', 'oxidised earrings', 'artisanal jewellery', 'handcrafted', 'Bengali jewellery'],
   icons: {
     icon: [
       {
@@ -65,7 +88,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} ${sugarMagic.variable} ${vielotta.variable} ${ypsilanti.variable} font-sans antialiased`}>
+      <body className={`${dmSans.variable} ${sugarMagic.variable} ${vielotta.variable} ${ypsilanti.variable} ${lipiPalash.variable} ${adrianaGabrielle.variable} font-sans antialiased`}>
         <CartProvider>
           {children}
         </CartProvider>

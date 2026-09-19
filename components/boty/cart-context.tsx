@@ -26,7 +26,7 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined)
 
-const STORAGE_KEY = "artisnal-gallery-cart"
+const STORAGE_KEY = "aaboron-cart"
 
 function isSameItem(a: CartItem, b: Omit<CartItem, "quantity">): boolean {
   return a.id === b.id && a.variant === b.variant

@@ -63,9 +63,9 @@ export default function CheckoutPage() {
       // Amount in paise (1 INR = 100 paise)
       amount: subtotal * 100,
       currency: "INR",
-      name: "Artisnal Gallery",
+      name: "Aaboron Jewellery Studio",
       description: `${items.length} ${items.length === 1 ? "item" : "items"}`,
-      // [PLACEHOLDER: add image: '/your-logo.png' once you have a logo]
+      image: "/images/logo/aaboron-logo.png",
       prefill: { name, email, contact: phone },
       theme: { color: "#4F5B3A" },
       handler: () => {

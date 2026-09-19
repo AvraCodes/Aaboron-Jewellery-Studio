@@ -81,6 +81,8 @@
   --font-serif: var(--font-serif), serif;
   --font-display: var(--font-display), serif;
   --font-script: var(--font-script), cursive;
+  --font-bengali: var(--font-bengali), 'Lipi Palash', sans-serif;
+  --font-accent: var(--font-accent), serif;
   --font-mono: 'Geist Mono', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);

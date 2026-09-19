@@ -28,7 +28,7 @@ export function Footer() {
       {/* Giant Background Text */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none select-none z-0">
         <span className="font-display text-[100px] sm:text-[140px] md:text-[200px] lg:text-[260px] xl:text-[300px] font-bold text-white/20 whitespace-nowrap leading-none tracking-tight">
-          Artisnal
+          Aaboron
         </span>
       </div>
 
@@ -36,10 +36,14 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            {/* [PLACEHOLDER: brand logo image] */}
-            <h2 className="font-display text-3xl text-foreground mb-4">Artisnal Gallery</h2>
+            <div className="flex items-center gap-2.5 mb-4">
+              <h2 className="font-display text-3xl text-foreground">Aaboron</h2>
+              <span className="font-bengali text-sm tracking-widest text-primary/75 font-medium border-l border-border/80 pl-2.5 select-none">
+                আবরণ
+              </span>
+            </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-              Handmade jewellery shaped with intention. Each piece is made to order, one at a time.
+              Handmade jewellery shaped with intention. Rooted in Bengal&apos;s timeless craft traditions, each piece is made to order.
             </p>
             <div className="flex gap-4">
               <a
@@ -119,7 +123,7 @@ export function Footer() {
         <div className="pt-10 border-t border-border/50">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} Artisnal Gallery. All rights reserved.
+              &copy; {new Date().getFullYear()} Aaboron Jewellery Studio. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link href="/shipping" className="text-sm text-muted-foreground hover:text-foreground boty-transition">

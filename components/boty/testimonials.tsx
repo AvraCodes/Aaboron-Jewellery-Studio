@@ -83,7 +83,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] 
     {/* Author */}
     <div className="flex items-start justify-between gap-2">
       <div>
-        <p className="text-foreground text-sm font-bold">{testimonial.name}</p>
+        <p className="text-foreground text-base font-accent tracking-wide">{testimonial.name}</p>
         <p className="text-xs text-muted-foreground">{testimonial.location}</p>
       </div>
       <span className="text-xs tracking-wide text-primary/70 bg-primary/5 px-2 py-1 rounded-full whitespace-nowrap">
@@ -127,9 +127,15 @@ export function Testimonials() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16">
-          <span className={`text-sm tracking-[0.3em] uppercase text-primary mb-4 block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
-            Kind Words
-          </span>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <span className={`text-sm tracking-[0.3em] uppercase text-primary block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
+              Kind Words
+            </span>
+            <span className="text-foreground/30 text-xs">·</span>
+            <span className="font-bengali text-xs tracking-widest text-primary/75 font-medium select-none">
+              অনুভূতি
+            </span>
+          </div>
           <h2 className={`font-display text-4xl leading-tight text-foreground text-balance md:text-7xl ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
             Words from our collectors
           </h2>

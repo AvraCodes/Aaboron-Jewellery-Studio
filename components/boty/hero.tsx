@@ -35,15 +35,22 @@ export function Hero() {
       <div className="relative z-10 w-full pt-20 mr-14 lg:mr-0">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="w-full lg:max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-            <span className="text-sm uppercase mb-6 block text-black animate-blur-in opacity-0 tracking-normal" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-              Handmade Jewellery
-            </span>
+            <div className="flex items-center justify-center lg:justify-start gap-2.5 mb-6 animate-blur-in opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+              <span className="text-xs uppercase tracking-[0.25em] text-foreground/80 font-medium">
+                Handmade Jewellery Studio
+              </span>
+              <span className="text-foreground/40 font-light">·</span>
+              <span className="font-bengali text-xs tracking-widest text-primary/80 font-medium select-none">
+                বাংলা ঐতিহ্য
+              </span>
+            </div>
             <h2 className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 text-balance text-black">
               <span className="font-display block animate-blur-in opacity-0 font-semibold" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>Crafted with</span>
               <span className="font-script text-primary block animate-blur-in opacity-0 xl:text-9xl text-7xl font-normal pt-1" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>intention.</span>
             </h2>
             <p className="text-lg leading-relaxed mb-10 max-w-md mx-auto lg:mx-0 text-black animate-blur-in opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
-              Each piece is shaped by hand — unhurried, considered, and quietly yours.
+              <span className="font-accent italic text-foreground/75 block text-base mb-1">Rooted in Bengal&apos;s timeless artisanal heritage —</span>
+              Each piece is shaped by hand, unhurried, considered, and quietly yours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-blur-in opacity-0" style={{ animationDelay: '1s', animationFillMode: 'forwards' }}>
               <Link

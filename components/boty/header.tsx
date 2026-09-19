@@ -47,9 +47,11 @@ export function Header() {
           </div>
 
           {/* Logo */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2">
-            {/* [PLACEHOLDER: brand logo image] */}
-            <span className="font-display text-xl sm:text-2xl tracking-wider text-foreground whitespace-nowrap">Artisnal Gallery</span>
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2.5">
+            <span className="font-display text-2xl sm:text-3xl tracking-wide text-foreground whitespace-nowrap">Aaboron</span>
+            <span className="font-bengali text-xs tracking-widest text-primary/75 font-medium border-l border-border/80 pl-2.5 hidden sm:inline select-none">
+              আবরণ
+            </span>
           </Link>
 
           {/* Right Actions */}
