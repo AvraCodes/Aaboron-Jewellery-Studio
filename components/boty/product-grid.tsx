@@ -62,7 +62,7 @@ export function ProductGrid() {
   }, [])
 
   return (
-    <section className="py-24 bg-transparent">
+    <section className="pt-10 pb-16 sm:pt-16 sm:pb-24 bg-transparent">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16">

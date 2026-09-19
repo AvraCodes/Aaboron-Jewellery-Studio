@@ -19,8 +19,8 @@ export default function HomePage() {
     <main>
       <Header />
       <Hero />
-      <TrustBadges />
       <ProductGrid />
+      <TrustBadges />
       <FeatureSection />
       <Testimonials />
       <CTABanner />
