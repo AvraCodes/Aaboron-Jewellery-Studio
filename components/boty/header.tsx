@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X, ShoppingBag } from "lucide-react"
 import { CartDrawer } from "./cart-drawer"
 import { useCart } from "./cart-context"
@@ -47,10 +48,17 @@ export function Header() {
           </div>
 
           {/* Logo */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2.5">
-            <span className="font-display text-2xl sm:text-3xl tracking-wide text-foreground whitespace-nowrap">Aaboron</span>
-            <span className="font-bengali text-xs tracking-widest text-primary/75 font-medium border-l border-border/80 pl-2.5 hidden sm:inline select-none">
-              আবরণ
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3 group">
+            <Image
+              src="/images/logo/aaboron-logo.png"
+              alt="Aaboron Jewellery Studio"
+              width={42}
+              height={42}
+              className="h-9 w-9 sm:h-10 sm:w-10 rounded-full object-cover shadow-sm ring-1 ring-primary/25 group-hover:scale-105 boty-transition"
+              priority
+            />
+            <span className="font-display text-xl sm:text-2xl tracking-wide text-foreground whitespace-nowrap">
+              Aaboron
             </span>
           </Link>
 

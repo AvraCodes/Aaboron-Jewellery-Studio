@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Instagram, Facebook } from "lucide-react"
 
 const footerLinks = {
@@ -36,11 +37,15 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/images/logo/aaboron-logo.png"
+                alt="Aaboron Jewellery Studio"
+                width={44}
+                height={44}
+                className="h-11 w-11 rounded-full object-cover shadow-sm ring-1 ring-border/50"
+              />
               <h2 className="font-display text-3xl text-foreground">Aaboron</h2>
-              <span className="font-bengali text-sm tracking-widest text-primary/75 font-medium border-l border-border/80 pl-2.5 select-none">
-                আবরণ
-              </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
               Handmade jewellery shaped with intention. Rooted in Bengal&apos;s timeless craft traditions, each piece is made to order.

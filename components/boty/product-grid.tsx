@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ShoppingBag } from "lucide-react"
+import { ShoppingBag, ArrowRight } from "lucide-react"
 import { useCart } from "./cart-context"
 import { products, CATEGORIES, type Category } from "@/lib/products"
 
@@ -19,6 +19,7 @@ export function ProductGrid() {
   const filteredProducts = products.filter(
     (p) => p.category === selectedCategory && p.isActive
   )
+  const displayedProducts = filteredProducts.slice(0, 4)
 
   const handleCategoryChange = (category: Category) => {
     if (category !== selectedCategory) {
@@ -103,93 +104,100 @@ export function ProductGrid() {
           </div>
         </div>
 
-        {/* Product Grid */}
+        {/* Product Grid - Center Aligned Tiles */}
         <div
           ref={gridRef}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto"
         >
-          {filteredProducts.map((product, index) => (
-            <Link
+          {displayedProducts.map((product, index) => (
+            <div
               key={`${selectedCategory}-${product.id}`}
-              href={`/product/${product.id}`}
-              className={`group transition-all duration-500 ease-out ${
+              className={`w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] max-w-[280px] transition-all duration-500 ease-out ${
                 isVisible && !isTransitioning ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
               }`}
               style={{ transitionDelay: isTransitioning ? '0ms' : `${index * 80}ms` }}
             >
-              <div className="bg-background rounded-3xl overflow-hidden boty-shadow boty-transition group-hover:scale-[1.02]">
-                {/* Image */}
-                <div className="relative aspect-square bg-muted overflow-hidden">
-                  <Image
-                    src={product.image || "/placeholder.jpg"}
-                    alt={product.name}
-                    fill
-                    className="object-cover boty-transition group-hover:scale-105"
-                  />
-                  {/* Badge */}
-                  {product.badge && (
-                    <span
-                      className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs tracking-wide ${
-                        product.badge === "New"
-                          ? "bg-primary/10 text-primary"
-                          : "bg-accent text-accent-foreground"
-                      }`}
-                    >
-                      {product.badge}
-                    </span>
-                  )}
-                  {/* Quick add button */}
-                  <button
-                    type="button"
-                    className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 boty-transition boty-shadow"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      e.stopPropagation()
-                      addItem({
-                        id: product.id,
-                        name: product.name,
-                        description: product.tagline,
-                        price: product.price,
-                        image: product.image,
-                      })
-                    }}
-                    aria-label="Add to cart"
-                  >
-                    <ShoppingBag className="w-4 h-4 text-foreground" />
-                  </button>
-                </div>
-
-                {/* Info */}
-                <div className="p-5">
-                  <h3 className="font-serif text-lg text-foreground mb-1">{product.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-3">{product.tagline}</p>
-                  <div className="flex items-center gap-2">
-                    <span className="font-medium text-foreground">₹{product.price}</span>
-                    {product.originalPrice && (
-                      <span className="text-sm text-muted-foreground line-through">
-                        ₹{product.originalPrice}
+              <Link
+                href={`/product/${product.id}`}
+                className="group block h-full"
+              >
+                <div className="bg-background rounded-3xl overflow-hidden boty-shadow boty-transition group-hover:scale-[1.02] flex flex-col h-full">
+                  {/* Image */}
+                  <div className="relative aspect-square bg-muted overflow-hidden">
+                    <Image
+                      src={product.image || "/placeholder.jpg"}
+                      alt={product.name}
+                      fill
+                      className="object-cover boty-transition group-hover:scale-105"
+                    />
+                    {/* Badge */}
+                    {product.badge && (
+                      <span
+                        className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs tracking-wide ${
+                          product.badge === "New"
+                            ? "bg-primary/10 text-primary"
+                            : "bg-accent text-accent-foreground"
+                        }`}
+                      >
+                        {product.badge}
                       </span>
                     )}
+                    {/* Quick add button */}
+                    <button
+                      type="button"
+                      className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 boty-transition boty-shadow"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        addItem({
+                          id: product.id,
+                          name: product.name,
+                          description: product.tagline,
+                          price: product.price,
+                          image: product.image,
+                        })
+                      }}
+                      aria-label="Add to cart"
+                    >
+                      <ShoppingBag className="w-4 h-4 text-foreground" />
+                    </button>
+                  </div>
+
+                  {/* Info - Center Aligned */}
+                  <div className="p-5 text-center flex flex-col flex-grow items-center justify-between">
+                    <div>
+                      <h3 className="font-serif text-lg text-foreground mb-1 group-hover:text-primary boty-transition line-clamp-1">{product.name}</h3>
+                      <p className="text-xs text-muted-foreground mb-3 line-clamp-1">{product.tagline}</p>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 pt-1 border-t border-border/20 w-full">
+                      <span className="font-medium text-foreground text-base">₹{product.price.toLocaleString("en-IN")}</span>
+                      {product.originalPrice && (
+                        <span className="text-xs text-muted-foreground line-through">
+                          ₹{product.originalPrice.toLocaleString("en-IN")}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))}
 
           {filteredProducts.length === 0 && (
-            <div className="col-span-full text-center py-16 text-muted-foreground">
+            <div className="w-full text-center py-16 text-muted-foreground">
               Products coming soon.
             </div>
           )}
         </div>
 
-        {/* View All Button */}
+        {/* View All in Category Button */}
         <div className="text-center mt-12">
           <Link
-            href="/shop"
-            className="inline-flex items-center justify-center gap-2 bg-transparent border border-foreground/20 text-foreground px-8 py-4 rounded-full text-sm tracking-wide boty-transition hover:bg-foreground/5"
+            href={`/shop?category=${selectedCategory}`}
+            className="inline-flex items-center justify-center gap-2 bg-transparent border border-foreground/20 text-foreground px-8 py-4 rounded-full text-sm tracking-wide boty-transition hover:bg-foreground hover:text-background hover:border-foreground"
           >
-            View All Pieces
+            Explore all {CATEGORIES.find((c) => c.value === selectedCategory)?.label}
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>
