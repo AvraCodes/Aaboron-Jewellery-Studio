@@ -8,22 +8,22 @@ const features = [
   {
     icon: Hand,
     title: "Hand-shaped",
-    description: "[PLACEHOLDER: detail about hand-forming process]"
+    description: "Individually sculpted by hand from raw, alluvial clay and terracotta."
   },
   {
     icon: Flame,
     title: "Kiln-fired",
-    description: "[PLACEHOLDER: detail about firing / curing process]"
+    description: "Slow-baked and naturally cured for enduring strength and featherlight wear."
   },
   {
     icon: Palette,
     title: "Hand-painted",
-    description: "[PLACEHOLDER: detail about glazing / painting]"
+    description: "Intricate floral and folk motifs hand-brushed with artisan pigments and sealed."
   },
   {
     icon: Heart,
     title: "Made with care",
-    description: "[PLACEHOLDER: detail about the making philosophy]"
+    description: "Rooted in meditative Bengal craft, honoring imperfection and soul in every curve."
   }
 ]
 
@@ -69,21 +69,20 @@ export function FeatureSection() {
   }, [])
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-transparent">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Bento Grid — layout kept exactly as template */}
+        {/* Bento Grid */}
         <div
           ref={bentoRef}
           className="grid md:grid-cols-4 mb-20 md:grid-rows-[300px_300px] gap-6"
         >
           {/* Left Large Block — Video with Overlay Card */}
           <div
-            className={`relative rounded-3xl overflow-hidden bg-card h-[500px] md:h-auto md:col-span-2 md:row-span-2 transition-all duration-700 ease-out ${
+            className={`relative rounded-3xl overflow-hidden bg-card h-[500px] md:h-auto md:col-span-2 md:row-span-2 transition-all duration-700 ease-out border border-border/40 ${
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             style={{ transitionDelay: '0ms' }}
           >
-            {/* [PLACEHOLDER: bento video 1 — jewellery making process] */}
             <video
               autoPlay
               muted
@@ -91,17 +90,17 @@ export function FeatureSection() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
-              {/* [PLACEHOLDER: bento video 1 src] */}
+              <source src="/videos/handcrafted-jewellery.mp4" type="video/mp4" />
             </video>
-            {/* Overlay Card */}
-            <div className="absolute bottom-8 left-8 right-8 bg-white p-6 shadow-lg rounded-xl">
+            {/* Translucent Overlay Card */}
+            <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 bg-card/85 backdrop-blur-md p-6 shadow-lg rounded-2xl border border-border/40">
               <div className="flex items-start gap-3">
                 <div>
-                  <h3 className="text-xl text-foreground mb-2 font-medium">
-                    Each piece, <span>made once</span>
+                  <h3 className="text-xl text-foreground mb-1 font-serif font-medium">
+                    Each piece, <span className="font-script text-primary text-3xl font-normal">made once</span>
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    [PLACEHOLDER: short description of the making process]
+                    Formed by human touch, no two pieces are ever identical. Every curve carries the rhythm of the artisan&apos;s hands.
                   </p>
                 </div>
               </div>
@@ -110,37 +109,36 @@ export function FeatureSection() {
 
           {/* Top Right — Craft philosophy */}
           <div
-            className={`rounded-3xl p-6 md:p-8 flex flex-col justify-center md:col-span-2 relative overflow-hidden transition-all duration-700 ease-out ${
+            className={`rounded-3xl p-6 md:p-8 flex flex-col justify-center md:col-span-2 relative overflow-hidden transition-all duration-700 ease-out border border-border/40 ${
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             style={{ transitionDelay: '100ms' }}
           >
-            {/* [PLACEHOLDER: bento image 1 — e.g. close-up of clay work / pendant detail] */}
             <Image
-              src="/placeholder.jpg"
-              alt="[PLACEHOLDER: jewellery craft detail]"
+              src="/images/products/clay-jewellery/clay-02.jpg"
+              alt="Aaboron handcrafted clay jewellery details"
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-stone-900/50 z-0" />
+            <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-[1px] z-0" />
             <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl text-white mb-2">
+              <h3 className="text-3xl md:text-4xl text-white mb-1 font-serif">
                 Slow craft
               </h3>
-              <h3 className="text-2xl md:text-3xl text-white/70 mb-4">
+              <h4 className="text-2xl md:text-3xl text-white/70 mb-4 font-script">
                 Quiet luxury
-              </h3>
+              </h4>
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-white/90 text-sm">
-                  <Hand className="w-4 h-4 flex-shrink-0" />
+                  <Hand className="w-4 h-4 flex-shrink-0 text-amber-200" />
                   <span>Hand-shaped from clay</span>
                 </div>
                 <div className="flex items-center gap-2 text-white/90 text-sm">
-                  <Flame className="w-4 h-4 flex-shrink-0" />
+                  <Flame className="w-4 h-4 flex-shrink-0 text-amber-200" />
                   <span>Kiln-fired for durability</span>
                 </div>
                 <div className="flex items-center gap-2 text-white/90 text-sm">
-                  <Palette className="w-4 h-4 flex-shrink-0" />
+                  <Palette className="w-4 h-4 flex-shrink-0 text-amber-200" />
                   <span>Hand-painted, one at a time</span>
                 </div>
               </div>
@@ -149,12 +147,11 @@ export function FeatureSection() {
 
           {/* Bottom Right — Process video */}
           <div
-            className={`rounded-3xl p-6 md:p-8 flex flex-col justify-center relative overflow-hidden bg-card md:col-span-2 transition-all duration-700 ease-out ${
+            className={`rounded-3xl p-6 md:p-8 flex flex-col justify-center relative overflow-hidden bg-card md:col-span-2 transition-all duration-700 ease-out border border-border/40 ${
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             style={{ transitionDelay: '200ms' }}
           >
-            {/* [PLACEHOLDER: bento video 2 — e.g. oxidising / finishing] */}
             <video
               autoPlay
               muted
@@ -162,19 +159,19 @@ export function FeatureSection() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover scale-[1.02]"
             >
-              {/* [PLACEHOLDER: bento video 2 src] */}
+              <source src="/videos/handcrafted-jewellery.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-transparent" />
+            <div className="absolute inset-0 bg-stone-900/65 backdrop-blur-[1px]" />
             <div className="relative z-10 flex flex-col justify-center h-full text-left items-start">
-              <div className="inline-flex items-center justify-center w-10 h-10 mb-3">
-                <Flame className="w-8 h-8 text-black" />
+              <div className="inline-flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-amber-400/20">
+                <Flame className="w-5 h-5 text-amber-300" />
               </div>
-              <h3 className="font-sans text-base mb-1 text-black">
-                Fired &amp; finished
+              <h3 className="font-sans text-xs uppercase tracking-[0.2em] mb-1 text-white/80">
+                Fired &amp; Finished
               </h3>
-              <h3 className="text-2xl md:text-3xl mb-2 text-black">
-                [PLACEHOLDER: process headline]
-              </h3>
+              <h4 className="text-2xl md:text-3xl mb-2 text-white font-serif">
+                Sculpted for timeless grace
+              </h4>
             </div>
           </div>
         </div>
@@ -184,22 +181,25 @@ export function FeatureSection() {
           ref={videoSectionRef}
           className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center my-0 py-20"
         >
-          {/* Video */}
+          {/* Maker Image with subtle badge */}
           <div
-            className={`relative aspect-[4/5] rounded-3xl overflow-hidden bg-card boty-shadow transition-all duration-700 ease-out ${
+            className={`relative aspect-[4/5] rounded-3xl overflow-hidden bg-card boty-shadow transition-all duration-700 ease-out border border-border/40 ${
               isVideoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
           >
-            {/* [PLACEHOLDER: bento video 3 — maker portrait / studio footage] */}
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              {/* [PLACEHOLDER: bento video 3 src] */}
-            </video>
+            <Image
+              src="/images/products/clay-jewellery/clay-01.jpg"
+              alt="Aaboron Artisan Jewellery Studio"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+            <div className="absolute bottom-8 left-8 right-8 text-white">
+              <span className="font-bengali text-xl sm:text-2xl block text-amber-200/90 mb-1 select-none">
+                হাতে তৈরি শিল্প
+              </span>
+              <p className="font-serif text-xl sm:text-2xl">The intimate touch of Bengal terracotta</p>
+            </div>
           </div>
 
           {/* Content */}
@@ -210,28 +210,34 @@ export function FeatureSection() {
             }`}
             style={{ transitionDelay: '100ms' }}
           >
-            <span className={`text-sm tracking-[0.3em] uppercase text-primary mb-4 block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
-              The Maker
-            </span>
+            <div className="flex items-center gap-2 mb-4">
+              <span className={`text-sm tracking-[0.3em] uppercase text-primary block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
+                The Maker
+              </span>
+              <span className="text-foreground/30 text-xs">·</span>
+              <span className="font-bengali text-xl sm:text-2xl text-primary font-medium select-none leading-none tracking-wide">
+                আমাদের গল্প
+              </span>
+            </div>
             <h2 className={`font-serif text-4xl leading-tight text-foreground mb-6 text-balance md:text-7xl ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
-              [PLACEHOLDER: maker story headline]
+              Born from earth, shaped by devotion
             </h2>
             <p className={`text-lg text-muted-foreground leading-relaxed mb-10 max-w-md ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.6s', animationFillMode: 'forwards' } : {}}>
-              [PLACEHOLDER: 2–3 sentence maker story — who you are, why you make jewellery, what drives you]
+              Aaboron was founded in Kolkata with a simple desire: to bring the poetic warmth of Bengal&apos;s terracotta and artisanal metalcraft into everyday adornments. Each creation is born from slow, meditative craftsmanship—celebrating natural textures and the quiet luxury of genuine handmade art.
             </p>
 
-            {/* Feature Cards */}
+            {/* Feature Cards — Translucent */}
             <div className="grid sm:grid-cols-2 gap-4">
               {features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="group p-5 boty-transition hover:scale-[1.02] rounded-md bg-white"
+                  className="group p-5 boty-transition hover:scale-[1.02] rounded-2xl bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 shadow-xs"
                 >
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full mb-3 group-hover:bg-primary/20 boty-transition bg-stone-50">
-                    <feature.icon className="w-5 h-5 text-primary" />
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full mb-3 group-hover:bg-primary/20 boty-transition bg-primary/10">
+                    <feature.icon className="w-5 h-5 text-primary group-hover:scale-110 boty-transition" />
                   </div>
-                  <h3 className="font-medium text-foreground mb-1">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  <h3 className="font-medium text-foreground mb-1 group-hover:text-primary boty-transition">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
               ))}
             </div>

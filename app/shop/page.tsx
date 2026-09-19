@@ -56,16 +56,22 @@ export default function ShopPage() {
   ]
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-transparent">
       <Header />
 
-      <div className="pt-28 pb-20">
+      <div className="pt-32 pb-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12">
-            <span className="text-sm tracking-[0.3em] uppercase text-primary mb-4 block">
-              Our Collection
-            </span>
+            <div className="flex items-center justify-center gap-2 mb-3">
+              <span className="text-sm tracking-[0.3em] uppercase text-primary font-medium block">
+                Our Collection
+              </span>
+              <span className="text-foreground/30 text-xs">·</span>
+              <span className="font-bengali text-xl sm:text-2xl text-primary font-medium select-none leading-none tracking-wide">
+                সমগ্র সংগ্রহ
+              </span>
+            </div>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-4 text-balance">
               Shop All Pieces
             </h1>
@@ -192,7 +198,7 @@ function ProductCard({
       }`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
-      <div className="bg-card rounded-3xl overflow-hidden boty-shadow boty-transition group-hover:scale-[1.02]">
+      <div className="bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 rounded-3xl overflow-hidden shadow-xs hover:shadow-xl boty-transition group-hover:scale-[1.02]">
         {/* Image */}
         <div className="relative aspect-square bg-muted overflow-hidden">
           {/* Skeleton */}
@@ -226,7 +232,7 @@ function ProductCard({
           {/* Quick add button */}
           <button
             type="button"
-            className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 boty-transition boty-shadow"
+            className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 boty-transition boty-shadow hover:bg-primary hover:text-primary-foreground group/btn"
             onClick={(e) => {
               e.preventDefault()
               e.stopPropagation()
@@ -240,7 +246,7 @@ function ProductCard({
             }}
             aria-label="Add to cart"
           >
-            <ShoppingBag className="w-5 h-5 text-foreground" />
+            <ShoppingBag className="w-5 h-5 text-foreground group-hover/btn:text-primary-foreground group-hover:text-primary transition-colors" />
           </button>
         </div>
 

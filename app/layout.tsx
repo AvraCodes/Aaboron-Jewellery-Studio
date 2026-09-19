@@ -88,10 +88,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} ${sugarMagic.variable} ${vielotta.variable} ${ypsilanti.variable} ${lipiPalash.variable} ${adrianaGabrielle.variable} font-sans antialiased`}>
-        <CartProvider>
-          {children}
-        </CartProvider>
+      <body className={`${dmSans.variable} ${sugarMagic.variable} ${vielotta.variable} ${ypsilanti.variable} ${lipiPalash.variable} ${adrianaGabrielle.variable} font-sans antialiased relative min-h-screen`}>
+        {/* Full-Page Handcrafted Jewellery Background Video */}
+        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-[0.20] saturate-[1.15] filter"
+          >
+            <source src="/videos/handcrafted-jewellery.mp4" type="video/mp4" />
+          </video>
+          {/* Subtle warm earthy wash so text remains perfectly crisp and readable */}
+          <div className="absolute inset-0 bg-background/50 backdrop-blur-[0.5px]" />
+        </div>
+
+        <div className="relative z-10 min-h-screen flex flex-col">
+          <CartProvider>
+            {children}
+          </CartProvider>
+        </div>
         <Analytics />
       </body>
     </html>

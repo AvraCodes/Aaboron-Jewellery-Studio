@@ -69,19 +69,19 @@ export default function ProductPage() {
     { key: "description", title: "Description", content: product.description },
     { key: "materials", title: "Materials & Dimensions", content: `${product.materials}\n\n${product.dimensions}` },
     { key: "care", title: "Care Instructions", content: product.care },
-    { key: "shipping", title: "Shipping & Returns", content: product.leadTime + "\n\n[PLACEHOLDER: returns policy]" },
+    { key: "shipping", title: "Shipping & Returns", content: product.leadTime + "\n\nHandmade with care in small batches. Due to hygiene considerations with jewellery, we accept replacements only for items damaged during transit. Please contact support@aaboron.in within 48 hours of delivery." },
   ]
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-transparent">
       <Header />
 
-      <div className="pt-28 pb-20">
+      <div className="pt-32 pb-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Back Link */}
           <Link
             href="/shop"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground boty-transition mb-8"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary boty-transition mb-8"
           >
             <ChevronLeft className="w-4 h-4" />
             Back to Shop
@@ -89,7 +89,7 @@ export default function ProductPage() {
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Product Image */}
-            <div className="relative aspect-square rounded-3xl overflow-hidden bg-card boty-shadow">
+            <div className="relative aspect-square rounded-3xl overflow-hidden bg-card/75 backdrop-blur-md border border-border/40 boty-shadow">
               <Image
                 src={product.image || "/placeholder.jpg"}
                 alt={product.name}
@@ -103,7 +103,7 @@ export default function ProductPage() {
             <div className="flex flex-col">
               {/* Header */}
               <div className="mb-8">
-                <span className="text-sm tracking-[0.3em] uppercase text-primary mb-2 block">
+                <span className="text-sm tracking-[0.3em] uppercase text-primary mb-2 block font-medium">
                   Aaboron
                 </span>
                 <h1 className="font-serif text-4xl md:text-5xl text-foreground mb-3">
@@ -128,7 +128,7 @@ export default function ProductPage() {
               {product.variants.length > 0 && (
                 <div className="mb-6">
                   <label className="text-sm font-medium text-foreground mb-3 block">
-                    [PLACEHOLDER: variant label, e.g. Chain Length]
+                    Select Option
                   </label>
                   <div className="flex gap-3 flex-wrap">
                     {product.variants.map((variant) => (

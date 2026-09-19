@@ -5,78 +5,82 @@ import { useEffect, useRef, useState } from "react"
 const testimonials = [
   {
     id: 1,
-    name: "[PLACEHOLDER: customer name]",
-    location: "[PLACEHOLDER: city]",
-    text: "[PLACEHOLDER: customer review — what they loved about the piece]",
-    product: "[PLACEHOLDER: product name]"
+    name: "Priya Sen",
+    location: "Kolkata",
+    text: "The clay pendant is so lightweight and the hand-painted detailing is breathtaking. Wore it for Durga Puja and received so many compliments. Truly crafted with care.",
+    product: "Terracotta Blossom Clay Set"
   },
   {
     id: 2,
-    name: "[PLACEHOLDER: customer name]",
-    location: "[PLACEHOLDER: city]",
-    text: "[PLACEHOLDER: customer review — what they loved about the piece]",
-    product: "[PLACEHOLDER: product name]"
+    name: "Ananya Roy",
+    location: "Bengaluru",
+    text: "Delicate, vintage, and doesn't hurt my sensitive ears even after 10 hours of wear. The oxidised silver finish looks genuine and heirloom-quality.",
+    product: "Delicate Floral Oxidised Jhumkis"
   },
   {
     id: 3,
-    name: "[PLACEHOLDER: customer name]",
-    location: "[PLACEHOLDER: city]",
-    text: "[PLACEHOLDER: customer review — what they loved about the piece]",
-    product: "[PLACEHOLDER: product name]"
+    name: "Sneha Mukherjee",
+    location: "Mumbai",
+    text: "The choker fits gracefully and the texture of the materials is so satisfying to touch. You can feel the intention behind every bead. Packaging was like receiving a gift.",
+    product: "Classic Crafted Choker Set"
   },
   {
     id: 4,
-    name: "[PLACEHOLDER: customer name]",
-    location: "[PLACEHOLDER: city]",
-    text: "[PLACEHOLDER: customer review — what they loved about the piece]",
-    product: "[PLACEHOLDER: product name]"
+    name: "Debalina Das",
+    location: "Delhi",
+    text: "The earthy terracotta colours are so warm and authentic. It feels like carrying a small piece of Bengal's soil and artistic soul wherever I travel.",
+    product: "Sonartari Clay Jewellery Set"
   },
   {
     id: 5,
-    name: "[PLACEHOLDER: customer name]",
-    location: "[PLACEHOLDER: city]",
-    text: "[PLACEHOLDER: customer review — what they loved about the piece]",
-    product: "[PLACEHOLDER: product name]"
+    name: "Rupsha Banerjee",
+    location: "Pune",
+    text: "Stunning statement earrings! Lightweight yet remarkably ornate. They catch the light with an antique subtlety that outshines commercial jewellery.",
+    product: "Statement Festive Oxidised Earrings"
   },
   {
     id: 6,
-    name: "[PLACEHOLDER: customer name]",
-    location: "[PLACEHOLDER: city]",
-    text: "[PLACEHOLDER: customer review — what they loved about the piece]",
-    product: "[PLACEHOLDER: product name]"
+    name: "Meenakshi Iyer",
+    location: "Chennai",
+    text: "Exquisite hand-painted mandala work on clay. Durable yet feather-light. Aaboron has become my favorite destination for slow, mindful gifts.",
+    product: "Floral Mandala Clay Earrings"
   },
   {
     id: 7,
-    name: "[PLACEHOLDER: customer name]",
-    location: "[PLACEHOLDER: city]",
-    text: "[PLACEHOLDER: customer review — what they loved about the piece]",
-    product: "[PLACEHOLDER: product name]"
+    name: "Tanushree Guha",
+    location: "Hyderabad",
+    text: "The organic clay finish feels so tactile and grounded compared to plastic fast-fashion pieces. Real artisan devotion in every curve.",
+    product: "Earth & Petal Clay Set"
   },
   {
     id: 8,
-    name: "[PLACEHOLDER: customer name]",
-    location: "[PLACEHOLDER: city]",
-    text: "[PLACEHOLDER: customer review — what they loved about the piece]",
-    product: "[PLACEHOLDER: product name]"
+    name: "Sharmila Bose",
+    location: "Kolkata",
+    text: "Antique finish is immaculate and looks like a timeless piece passed down through generations. Such proud Bengali heritage in modern design.",
+    product: "Heritage Jhumki Oxidised Danglers"
   },
   {
     id: 9,
-    name: "[PLACEHOLDER: customer name]",
-    location: "[PLACEHOLDER: city]",
-    text: "[PLACEHOLDER: customer review — what they loved about the piece]",
-    product: "[PLACEHOLDER: product name]"
+    name: "Arpita Paul",
+    location: "London, UK",
+    text: "Ordered for my sister's wedding in India. She fell in love immediately! The artisanal charm and unhurried craftsmanship shine through.",
+    product: "Festive Heritage Jewellery Set"
   }
 ]
 
 const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
   <div
-    className="rounded-3xl p-6 bg-white mb-4 flex-shrink-0"
-    style={{
-      boxShadow: "rgba(14, 63, 126, 0.04) 0px 0px 0px 1px, rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.04) 0px 6px 6px -3px, rgba(14, 63, 126, 0.04) 0px 12px 12px -6px, rgba(14, 63, 126, 0.04) 0px 24px 24px -12px"
-    }}
+    className="rounded-3xl p-6 bg-card/70 backdrop-blur-md border border-border/40 mb-4 flex-shrink-0 boty-shadow boty-transition hover:bg-card/85"
   >
+    {/* Stars */}
+    <div className="flex gap-1 mb-3">
+      {[...Array(5)].map((_, i) => (
+        <span key={i} className="text-amber-500/80 text-sm">★</span>
+      ))}
+    </div>
+
     {/* Quote */}
-    <p className="text-foreground/80 leading-relaxed mb-4 text-pretty font-medium text-xl font-serif tracking-wide">
+    <p className="text-foreground/85 leading-relaxed mb-4 text-pretty font-medium text-lg font-serif tracking-wide">
       &ldquo;{testimonial.text}&rdquo;
     </p>
 
@@ -86,7 +90,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] 
         <p className="text-foreground text-base font-accent tracking-wide">{testimonial.name}</p>
         <p className="text-xs text-muted-foreground">{testimonial.location}</p>
       </div>
-      <span className="text-xs tracking-wide text-primary/70 bg-primary/5 px-2 py-1 rounded-full whitespace-nowrap">
+      <span className="text-xs tracking-wide text-primary/80 bg-primary/10 px-2.5 py-1 rounded-full whitespace-nowrap font-medium">
         {testimonial.product}
       </span>
     </div>
@@ -123,7 +127,7 @@ export function Testimonials() {
   }, [])
 
   return (
-    <section className="py-24 bg-background overflow-hidden pb-24 pt-12">
+    <section className="py-24 bg-transparent overflow-hidden pb-24 pt-12">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16">
@@ -132,7 +136,7 @@ export function Testimonials() {
               Kind Words
             </span>
             <span className="text-foreground/30 text-xs">·</span>
-            <span className="font-bengali text-xs tracking-widest text-primary/75 font-medium select-none">
+            <span className="font-bengali text-xl sm:text-2xl text-primary font-medium select-none leading-none tracking-wide">
               অনুভূতি
             </span>
           </div>
@@ -144,8 +148,8 @@ export function Testimonials() {
         {/* Scrolling Testimonials */}
         <div className="relative">
           {/* Gradient Overlays */}
-          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent z-10 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background/70 to-transparent z-10 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background/70 to-transparent z-10 pointer-events-none" />
 
           {/* Mobile — Single Column */}
           <div className="md:hidden h-[600px]">

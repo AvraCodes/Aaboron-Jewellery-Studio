@@ -62,7 +62,7 @@ export function ProductGrid() {
   }, [])
 
   return (
-    <section className="py-24 bg-card">
+    <section className="py-24 bg-transparent">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16">
@@ -71,7 +71,7 @@ export function ProductGrid() {
               Our Collection
             </span>
             <span className="text-foreground/30 text-xs">·</span>
-            <span className="font-bengali text-xs tracking-widest text-primary/75 font-medium select-none">
+            <span className="font-bengali text-xl sm:text-2xl text-primary font-medium select-none leading-none tracking-wide">
               গ্যালারি
             </span>
           </div>
@@ -86,7 +86,7 @@ export function ProductGrid() {
 
         {/* Segmented Control */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex flex-wrap justify-center bg-background rounded-full p-1 gap-1 border border-border/30">
+          <div className="inline-flex flex-wrap justify-center bg-card/80 backdrop-blur-md rounded-full p-1 gap-1 border border-border/40">
             {CATEGORIES.map((category) => (
               <button
                 key={category.value}
@@ -121,7 +121,7 @@ export function ProductGrid() {
                 href={`/product/${product.id}`}
                 className="group block h-full"
               >
-                <div className="bg-background rounded-3xl overflow-hidden boty-shadow boty-transition group-hover:scale-[1.02] flex flex-col h-full">
+                <div className="bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 rounded-3xl overflow-hidden shadow-xs hover:shadow-xl boty-transition group-hover:scale-[1.02] flex flex-col h-full">
                   {/* Image */}
                   <div className="relative aspect-square bg-muted overflow-hidden">
                     <Image
@@ -145,7 +145,7 @@ export function ProductGrid() {
                     {/* Quick add button */}
                     <button
                       type="button"
-                      className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 boty-transition boty-shadow"
+                      className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 boty-transition boty-shadow hover:bg-primary hover:text-primary-foreground group/btn"
                       onClick={(e) => {
                         e.preventDefault()
                         e.stopPropagation()
@@ -159,7 +159,7 @@ export function ProductGrid() {
                       }}
                       aria-label="Add to cart"
                     >
-                      <ShoppingBag className="w-4 h-4 text-foreground" />
+                      <ShoppingBag className="w-4 h-4 text-foreground group-hover/btn:text-primary-foreground group-hover:text-primary transition-colors" />
                     </button>
                   </div>
 

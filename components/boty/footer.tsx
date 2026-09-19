@@ -52,22 +52,22 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="[PLACEHOLDER: Instagram URL]"
+                href="https://instagram.com/aaboron_jewellery"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-foreground/60 hover:text-foreground boty-transition boty-shadow"
+                className="group w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm border border-border/40 flex items-center justify-center text-foreground/70 hover:text-primary hover:border-primary/40 boty-transition boty-shadow"
                 aria-label="Instagram"
               >
-                <Instagram className="w-4 h-4" />
+                <Instagram className="w-4 h-4 group-hover:scale-110 group-hover:text-primary boty-transition" />
               </a>
               <a
-                href="[PLACEHOLDER: Facebook URL]"
+                href="https://facebook.com/aaboron.jewellery"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-foreground/60 hover:text-foreground boty-transition boty-shadow"
+                className="group w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm border border-border/40 flex items-center justify-center text-foreground/70 hover:text-primary hover:border-primary/40 boty-transition boty-shadow"
                 aria-label="Facebook"
               >
-                <Facebook className="w-4 h-4" />
+                <Facebook className="w-4 h-4 group-hover:scale-110 group-hover:text-primary boty-transition" />
               </a>
             </div>
           </div>

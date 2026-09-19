@@ -5,30 +5,21 @@ import { ArrowRight } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#e3e1e2' }}>
-      {/* Background Video — [PLACEHOLDER: replace src with jewellery brand video] */}
-      <div className="border-b border-border/50 p-6 py-2" style={{ backgroundColor: '#e3e1e2' }}>
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-transparent">
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           autoPlay
           muted
           loop
           playsInline
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            minWidth: '100%',
-            minHeight: '100%',
-            width: 'auto',
-            height: 'auto',
-            objectFit: 'cover'
-          }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover"
         >
-          {/* [PLACEHOLDER: hero video src — e.g. <source src="/videos/hero.mp4" type="video/mp4" />] */}
+          <source src="/videos/handcrafted-jewellery.mp4" type="video/mp4" />
         </video>
-        {/* Bottom fade gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-to-t from-background via-background/50 to-transparent" />
+        {/* Soft overlay and bottom fade gradient */}
+        <div className="absolute inset-0 bg-background/25" />
+        <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
       </div>
 
       {/* Content */}
@@ -40,7 +31,7 @@ export function Hero() {
                 Handmade Jewellery Studio
               </span>
               <span className="text-foreground/40 font-light">·</span>
-              <span className="font-bengali text-xs tracking-widest text-primary/80 font-medium select-none">
+              <span className="font-bengali text-xl sm:text-2xl text-primary font-medium select-none leading-none tracking-wide">
                 বাংলা ঐতিহ্য
               </span>
             </div>

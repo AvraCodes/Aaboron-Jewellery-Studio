@@ -39,6 +39,13 @@
   --sidebar-accent-foreground: #2C2C2C;
   --sidebar-border: #D8CFC4;
   --sidebar-ring: #4F5B3A;
+
+  /* Earthy Tones */
+  --terracotta: #C26343;
+  --terracotta-dark: #8C3E29;
+  --clay: #C99765;
+  --moss: #3C472E;
+  --sand-warm: #EDE1D1;
 }
 
 .dark {
@@ -121,6 +128,13 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Earthy Colors */
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-dark: var(--terracotta-dark);
+  --color-clay: var(--clay);
+  --color-moss: var(--moss);
+  --color-sand-warm: var(--sand-warm);
 }
 
 @layer base {
@@ -129,9 +143,11 @@
   }
   html {
     scroll-behavior: smooth;
+    background-color: var(--background);
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background-color: transparent;
   }
 }
 

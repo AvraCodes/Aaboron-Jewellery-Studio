@@ -32,6 +32,9 @@ export default function CheckoutPage() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
+  const [address, setAddress] = useState("")
+  const [city, setCity] = useState("")
+  const [pincode, setPincode] = useState("")
   const [isScriptLoaded, setIsScriptLoaded] = useState(false)
   const [isPaying, setIsPaying] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
@@ -51,8 +54,8 @@ export default function CheckoutPage() {
 
   const handlePayment = () => {
     if (!isScriptLoaded) return
-    if (!name || !email || !phone) {
-      alert("Please fill in all fields before proceeding.")
+    if (!name || !email || !phone || !address || !city || !pincode) {
+      alert("Please fill in all contact and shipping address details before proceeding.")
       return
     }
 
@@ -84,20 +87,22 @@ export default function CheckoutPage() {
 
   if (isSuccess) {
     return (
-      <main className="min-h-screen">
+      <main className="min-h-screen bg-transparent">
         <Header />
         <div className="pt-40 pb-20 text-center max-w-md mx-auto px-6">
-          <ShieldCheck className="w-16 h-16 text-primary mx-auto mb-6" strokeWidth={1} />
-          <h1 className="font-serif text-4xl text-foreground mb-4">Order placed</h1>
-          <p className="text-muted-foreground mb-8">
-            Thank you, {name}. You will receive a confirmation email at {email} shortly.
-          </p>
-          <Link
-            href="/shop"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full text-sm tracking-wide boty-transition hover:bg-primary/90"
-          >
-            Continue Shopping
-          </Link>
+          <div className="bg-card/75 backdrop-blur-md border border-border/40 rounded-3xl p-8 boty-shadow">
+            <ShieldCheck className="w-16 h-16 text-primary mx-auto mb-6" strokeWidth={1} />
+            <h1 className="font-serif text-3xl text-foreground mb-3">Thank you for your order</h1>
+            <p className="text-muted-foreground leading-relaxed mb-8 text-sm">
+              Your handmade jewellery order has been received and will be crafted with care. We will send updates to {email}.
+            </p>
+            <Link
+              href="/shop"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 rounded-full text-sm font-medium hover:bg-primary/90 boty-transition"
+            >
+              Continue Browsing
+            </Link>
+          </div>
         </div>
         <Footer />
       </main>
@@ -105,67 +110,105 @@ export default function CheckoutPage() {
   }
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-transparent">
       <Header />
 
-      <div className="pt-28 pb-20">
+      <div className="pt-32 pb-24">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <Link
             href="/shop"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground boty-transition mb-8"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary boty-transition mb-8"
           >
             <ChevronLeft className="w-4 h-4" />
             Continue Shopping
           </Link>
 
-          <h1 className="font-serif text-4xl text-foreground mb-12">Checkout</h1>
+          <h1 className="font-serif text-4xl text-foreground mb-10">Checkout</h1>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-            {/* Contact Details */}
-            <div>
-              <h2 className="font-medium text-foreground mb-6 text-lg">Your Details</h2>
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
+            {/* Contact & Shipping Details */}
+            <div className="bg-card/75 backdrop-blur-md border border-border/40 rounded-3xl p-8 boty-shadow">
+              <h2 className="font-serif text-2xl text-foreground mb-6">Contact &amp; Shipping</h2>
               <div className="space-y-4">
                 <div>
-                  <label htmlFor="checkout-name" className="text-sm text-muted-foreground block mb-1.5">Full Name</label>
+                  <label htmlFor="checkout-name" className="text-sm text-muted-foreground block mb-1.5 font-medium">Full Name</label>
                   <input
                     id="checkout-name"
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full bg-card border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary boty-transition"
-                    placeholder="Your name"
+                    className="w-full bg-background/70 backdrop-blur-sm border border-border/60 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary boty-transition"
+                    placeholder="Your full name"
                     required
                   />
                 </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="checkout-email" className="text-sm text-muted-foreground block mb-1.5 font-medium">Email</label>
+                    <input
+                      id="checkout-email"
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full bg-background/70 backdrop-blur-sm border border-border/60 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary boty-transition"
+                      placeholder="you@example.com"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="checkout-phone" className="text-sm text-muted-foreground block mb-1.5 font-medium">Phone</label>
+                    <input
+                      id="checkout-phone"
+                      type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="w-full bg-background/70 backdrop-blur-sm border border-border/60 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary boty-transition"
+                      placeholder="+91 98765 43210"
+                      required
+                    />
+                  </div>
+                </div>
+
                 <div>
-                  <label htmlFor="checkout-email" className="text-sm text-muted-foreground block mb-1.5">Email</label>
+                  <label htmlFor="checkout-address" className="text-sm text-muted-foreground block mb-1.5 font-medium">Delivery Address</label>
                   <input
-                    id="checkout-email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-card border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary boty-transition"
-                    placeholder="you@example.com"
+                    id="checkout-address"
+                    type="text"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                    className="w-full bg-background/70 backdrop-blur-sm border border-border/60 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary boty-transition"
+                    placeholder="Flat / House No., Street, Landmark"
                     required
                   />
                 </div>
-                <div>
-                  <label htmlFor="checkout-phone" className="text-sm text-muted-foreground block mb-1.5">Phone</label>
-                  <input
-                    id="checkout-phone"
-                    type="tel"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    className="w-full bg-card border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary boty-transition"
-                    placeholder="+91 00000 00000"
-                    required
-                  />
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="checkout-city" className="text-sm text-muted-foreground block mb-1.5 font-medium">City</label>
+                    <input
+                      id="checkout-city"
+                      type="text"
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
+                      className="w-full bg-background/70 backdrop-blur-sm border border-border/60 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary boty-transition"
+                      placeholder="Kolkata"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="checkout-pincode" className="text-sm text-muted-foreground block mb-1.5 font-medium">PIN Code</label>
+                    <input
+                      id="checkout-pincode"
+                      type="text"
+                      value={pincode}
+                      onChange={(e) => setPincode(e.target.value)}
+                      className="w-full bg-background/70 backdrop-blur-sm border border-border/60 rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary boty-transition"
+                      placeholder="700001"
+                      required
+                    />
+                  </div>
                 </div>
               </div>
-              {/* [PLACEHOLDER: shipping address fields — add once shipping policy is defined] */}
-              <p className="text-xs text-muted-foreground mt-4 italic">
-                Shipping address will be confirmed upon order confirmation.
-              </p>
 
               <div className="flex items-center gap-2 mt-6 text-xs text-muted-foreground">
                 <ShieldCheck className="w-4 h-4 text-primary flex-shrink-0" />
