@@ -90,7 +90,7 @@ export function FeatureSection() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="/videos/handcrafted-jewellery.mp4" type="video/mp4" />
+              <source src="/videos/artisanal-jewellery.mp4" type="video/mp4" />
             </video>
             {/* Translucent Overlay Card */}
             <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8 bg-card/85 backdrop-blur-md p-4 sm:p-6 shadow-lg rounded-2xl border border-border/40">
@@ -159,7 +159,7 @@ export function FeatureSection() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover scale-[1.02]"
             >
-              <source src="/videos/handcrafted-jewellery.mp4" type="video/mp4" />
+              <source src="/videos/terracotta-jewellery.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-stone-900/65 backdrop-blur-[1px]" />
             <div className="relative z-10 flex flex-col justify-center h-full text-left items-start">

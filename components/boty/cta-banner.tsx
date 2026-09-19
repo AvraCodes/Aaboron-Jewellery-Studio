@@ -47,7 +47,7 @@ export function CTABanner() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-20 filter saturate-[1.2] brightness-75 pointer-events-none"
           >
-            <source src="/videos/handcrafted-jewellery.mp4" type="video/mp4" />
+            <source src="/videos/artisanal-jewellery.mp4" type="video/mp4" />
           </video>
 
           {/* Deep Earthy Gradients: Terracotta & Forest Moss */}

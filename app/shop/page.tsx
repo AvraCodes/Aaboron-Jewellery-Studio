@@ -251,12 +251,12 @@ function ProductCard({
         </div>
 
         {/* Info */}
-        <div className="p-3.5 sm:p-6 flex flex-col flex-grow justify-between">
+        <div className="p-3.5 sm:p-6 flex flex-col flex-grow justify-between text-center items-center">
           <div>
             <h3 className="font-serif text-sm sm:text-xl text-foreground mb-1 group-hover:text-primary boty-transition line-clamp-1 font-medium">{product.name}</h3>
             <p className="text-[11px] sm:text-sm text-muted-foreground mb-2 sm:mb-4 line-clamp-1">{product.tagline}</p>
           </div>
-          <div className="flex items-center gap-1.5 sm:gap-2 pt-1 border-t border-border/20">
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 pt-1 border-t border-border/20 w-full">
             <span className="text-sm sm:text-lg font-semibold text-foreground">₹{product.price.toLocaleString("en-IN")}</span>
             {product.originalPrice && (
               <span className="text-[11px] sm:text-sm text-muted-foreground line-through">

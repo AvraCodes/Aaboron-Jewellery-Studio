@@ -98,7 +98,7 @@ export default function RootLayout({
             playsInline
             className="w-full h-full object-cover opacity-[0.20] saturate-[1.15] filter"
           >
-            <source src="/videos/handcrafted-jewellery.mp4" type="video/mp4" />
+            <source src="/videos/terracotta-jewellery.mp4" type="video/mp4" />
           </video>
           {/* Subtle warm earthy wash so text remains perfectly crisp and readable */}
           <div className="absolute inset-0 bg-background/50 backdrop-blur-[0.5px]" />

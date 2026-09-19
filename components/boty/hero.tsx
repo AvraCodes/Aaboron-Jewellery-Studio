@@ -15,7 +15,7 @@ export function Hero() {
           playsInline
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover"
         >
-          <source src="/videos/handcrafted-jewellery.mp4" type="video/mp4" />
+          <source src="/videos/terracotta-jewellery.mp4" type="video/mp4" />
         </video>
         {/* Soft overlay and bottom fade gradient */}
         <div className="absolute inset-0 bg-background/25" />

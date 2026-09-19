@@ -104,15 +104,15 @@ export function ProductGrid() {
           </div>
         </div>
 
-        {/* Product Grid - Responsive 2-Col Mobile / 4-Col Desktop */}
+        {/* Product Grid - Centered Responsive Layout */}
         <div
           ref={gridRef}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 max-w-6xl mx-auto"
+          className="flex flex-wrap justify-center gap-3 sm:gap-6 max-w-6xl mx-auto w-full"
         >
           {displayedProducts.map((product, index) => (
             <div
               key={`${selectedCategory}-${product.id}`}
-              className={`transition-all duration-500 ease-out ${
+              className={`w-[calc(50%-0.375rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] max-w-[270px] flex-shrink-0 transition-all duration-500 ease-out flex flex-col ${
                 isVisible && !isTransitioning ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
               }`}
               style={{ transitionDelay: isTransitioning ? '0ms' : `${index * 80}ms` }}
@@ -121,7 +121,7 @@ export function ProductGrid() {
                 href={`/product/${product.id}`}
                 className="group block h-full"
               >
-                <div className="bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xs hover:shadow-xl card-hover-lift boty-transition group-hover:scale-[1.01] flex flex-col h-full">
+                <div className="bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xs hover:shadow-xl card-hover-lift boty-transition group-hover:scale-[1.01] flex flex-col h-full items-center text-center">
                   {/* Image */}
                   <div className="relative aspect-square bg-muted overflow-hidden">
                     <Image
