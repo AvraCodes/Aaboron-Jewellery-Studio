@@ -184,7 +184,7 @@ export function FeatureSection() {
           {/* Maker Image with subtle badge */}
           <div className="flex w-full">
             <div
-              className={`relative w-full min-h-[340px] sm:min-h-[420px] aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-full rounded-2xl sm:rounded-3xl overflow-hidden bg-card boty-shadow transition-all duration-700 ease-out border border-border/40 card-hover-lift ${
+              className={`relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-full rounded-2xl sm:rounded-3xl overflow-hidden bg-card boty-shadow transition-all duration-700 ease-out border border-border/40 card-hover-lift ${
                 isVideoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
               }`}
             >

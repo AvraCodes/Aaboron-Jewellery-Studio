@@ -1,5 +1,11 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/boty/header"
 import { Footer } from "@/components/boty/footer"
+
+export const metadata: Metadata = {
+  title: "Shipping & Returns Policy | Aaboron Handmade Jewellery Studio",
+  description: "Details on dispatch timelines, express pan-India shipping, tamper-evident gift packaging, and our replacement policy for damaged deliveries.",
+}
 
 export default function ShippingPage() {
   return (

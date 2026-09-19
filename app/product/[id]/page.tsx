@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useParams } from "next/navigation"
-import { ChevronLeft, Minus, Plus, ChevronDown, Hand, Heart, PackageCheck, Shield, Check } from "lucide-react"
+import { ChevronLeft, Minus, Plus, ChevronDown, Hand, Heart, PackageCheck, Shield, Check, ShoppingBag } from "lucide-react"
 import { Header } from "@/components/boty/header"
 import { Footer } from "@/components/boty/footer"
 import { useCart } from "@/components/boty/cart-context"
@@ -76,7 +76,7 @@ export default function ProductPage() {
     <main className="min-h-screen bg-transparent">
       <Header />
 
-      <div className="pt-24 sm:pt-32 pb-16 sm:pb-24">
+      <div className="pt-24 sm:pt-32 pb-24 sm:pb-28 lg:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Link */}
           <Link
@@ -244,6 +244,40 @@ export default function ProductPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Sticky Mobile CTA Bar */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-card/95 backdrop-blur-md border-t border-border/50 p-3 sm:p-4 px-4 sm:px-6 flex items-center justify-between gap-4 boty-shadow">
+        <div className="flex flex-col min-w-0">
+          <p className="font-serif text-sm text-foreground font-medium truncate">{product.name}</p>
+          <div className="flex items-center gap-1.5">
+            <span className="text-base font-semibold text-foreground">₹{product.price}</span>
+            {product.originalPrice && (
+              <span className="text-xs text-muted-foreground line-through">₹{product.originalPrice}</span>
+            )}
+          </div>
+        </div>
+        <button
+          type="button"
+          onClick={handleAddToCart}
+          className={`flex-shrink-0 inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium tracking-wide boty-transition boty-shadow ${
+            isAdded
+              ? "bg-primary/80 text-primary-foreground"
+              : "bg-primary text-primary-foreground hover:bg-primary/90 active:scale-95"
+          }`}
+        >
+          {isAdded ? (
+            <>
+              <Check className="w-3.5 h-3.5" />
+              Added
+            </>
+          ) : (
+            <>
+              <ShoppingBag className="w-3.5 h-3.5" />
+              Add to Cart
+            </>
+          )}
+        </button>
       </div>
 
       <Footer />

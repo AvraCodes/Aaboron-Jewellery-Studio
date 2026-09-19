@@ -52,8 +52,10 @@ export function CTABanner() {
 
           {/* Deep Earthy Gradients: Terracotta & Forest Moss */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#291a14]/95 via-[#1d2719]/90 to-[#1b1915]/95 z-0" />
-          <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-[#c46243]/15 blur-3xl pointer-events-none z-0" />
-          <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-[#4F5B3A]/30 blur-3xl pointer-events-none z-0" />
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-[#c46243]/15 blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-[#4F5B3A]/30 blur-3xl pointer-events-none" />
+          </div>
 
           {/* Content Layout */}
           <div className="relative z-10 grid md:grid-cols-12 gap-6 sm:gap-8 items-center">

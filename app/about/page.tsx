@@ -1,6 +1,12 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import { Header } from "@/components/boty/header"
 import { Footer } from "@/components/boty/footer"
+
+export const metadata: Metadata = {
+  title: "The Maker's Story | Aaboron Handmade Jewellery Studio",
+  description: "Learn about Aaboron — our philosophy of mindful craftsmanship, hand-kneaded Bengali clay traditions, and dedication to slow, intentional jewellery making.",
+}
 
 export default function AboutPage() {
   return (

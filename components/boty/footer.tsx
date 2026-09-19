@@ -27,8 +27,8 @@ export function Footer() {
   return (
     <footer className="bg-card/90 backdrop-blur-md border-t border-border/40 pt-14 sm:pt-20 pb-8 sm:pb-10 relative overflow-hidden">
       {/* Giant Background Text */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none select-none z-0">
-        <span className="font-display text-[70px] sm:text-[140px] md:text-[200px] lg:text-[260px] xl:text-[300px] font-bold text-white/15 whitespace-nowrap leading-none tracking-tight">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0 flex items-end justify-center">
+        <span className="font-display text-[70px] sm:text-[140px] md:text-[180px] lg:text-[240px] xl:text-[300px] font-bold text-white/15 whitespace-nowrap leading-none tracking-tight">
           Aaboron
         </span>
       </div>

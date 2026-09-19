@@ -90,7 +90,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] 
         <p className="text-foreground text-sm sm:text-base font-accent tracking-wide font-medium">{testimonial.name}</p>
         <p className="text-[11px] sm:text-xs text-muted-foreground">{testimonial.location}</p>
       </div>
-      <span className="text-[10px] sm:text-xs tracking-wide text-primary/90 bg-primary/10 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap font-medium">
+      <span className="text-[10px] sm:text-xs tracking-wide text-primary/90 bg-primary/10 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full font-medium text-right max-w-[60%] line-clamp-1">
         {testimonial.product}
       </span>
     </div>

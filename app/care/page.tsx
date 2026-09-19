@@ -1,5 +1,11 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/boty/header"
 import { Footer } from "@/components/boty/footer"
+
+export const metadata: Metadata = {
+  title: "Jewellery Care Guide | Aaboron Handmade Jewellery Studio",
+  description: "Expert care and maintenance advice to keep your handcrafted clay pendants and oxidised jewellery radiant, pristine, and preserved for years.",
+}
 
 export default function CarePage() {
   return (
