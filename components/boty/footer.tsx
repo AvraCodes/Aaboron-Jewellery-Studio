@@ -25,16 +25,16 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-card pt-20 pb-10 relative overflow-hidden">
+    <footer className="bg-card/90 backdrop-blur-md border-t border-border/40 pt-14 sm:pt-20 pb-8 sm:pb-10 relative overflow-hidden">
       {/* Giant Background Text */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none select-none z-0">
-        <span className="font-display text-[100px] sm:text-[140px] md:text-[200px] lg:text-[260px] xl:text-[300px] font-bold text-white/20 whitespace-nowrap leading-none tracking-tight">
+        <span className="font-display text-[70px] sm:text-[140px] md:text-[200px] lg:text-[260px] xl:text-[300px] font-bold text-white/15 whitespace-nowrap leading-none tracking-tight">
           Aaboron
         </span>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-12 sm:mb-16">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-4">

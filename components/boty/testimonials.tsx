@@ -70,27 +70,27 @@ const testimonials = [
 
 const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
   <div
-    className="rounded-3xl p-6 bg-card/70 backdrop-blur-md border border-border/40 mb-4 flex-shrink-0 boty-shadow boty-transition hover:bg-card/85"
+    className="rounded-2xl sm:rounded-3xl p-4 sm:p-6 bg-card/75 backdrop-blur-md border border-border/40 mb-3 sm:mb-4 flex-shrink-0 card-hover-lift boty-transition hover:border-primary/40 hover:bg-card/90"
   >
     {/* Stars */}
-    <div className="flex gap-1 mb-3">
+    <div className="flex gap-1 mb-2.5 sm:mb-3">
       {[...Array(5)].map((_, i) => (
-        <span key={i} className="text-amber-500/80 text-sm">★</span>
+        <span key={i} className="text-amber-500/90 text-xs sm:text-sm">★</span>
       ))}
     </div>
 
     {/* Quote */}
-    <p className="text-foreground/85 leading-relaxed mb-4 text-pretty font-medium text-lg font-serif tracking-wide">
+    <p className="text-foreground/90 leading-relaxed mb-3 sm:mb-4 text-pretty font-medium text-sm sm:text-base md:text-lg font-serif tracking-wide">
       &ldquo;{testimonial.text}&rdquo;
     </p>
 
     {/* Author */}
     <div className="flex items-start justify-between gap-2">
       <div>
-        <p className="text-foreground text-base font-accent tracking-wide">{testimonial.name}</p>
-        <p className="text-xs text-muted-foreground">{testimonial.location}</p>
+        <p className="text-foreground text-sm sm:text-base font-accent tracking-wide font-medium">{testimonial.name}</p>
+        <p className="text-[11px] sm:text-xs text-muted-foreground">{testimonial.location}</p>
       </div>
-      <span className="text-xs tracking-wide text-primary/80 bg-primary/10 px-2.5 py-1 rounded-full whitespace-nowrap font-medium">
+      <span className="text-[10px] sm:text-xs tracking-wide text-primary/90 bg-primary/10 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap font-medium">
         {testimonial.product}
       </span>
     </div>
@@ -127,20 +127,20 @@ export function Testimonials() {
   }, [])
 
   return (
-    <section className="py-24 bg-transparent overflow-hidden pb-24 pt-12">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-14 sm:py-24 bg-transparent overflow-hidden pb-14 sm:pb-24 pt-8 sm:pt-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div ref={headerRef} className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className={`text-sm tracking-[0.3em] uppercase text-primary block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
+        <div ref={headerRef} className="text-center mb-10 sm:mb-16">
+          <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
+            <span className={`text-xs sm:text-sm tracking-[0.3em] uppercase text-primary block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
               Kind Words
             </span>
             <span className="text-foreground/30 text-xs">·</span>
-            <span className="font-bengali text-xl sm:text-2xl text-primary font-medium select-none leading-none tracking-wide">
+            <span className="font-bengali text-lg sm:text-2xl text-primary font-medium select-none leading-none tracking-wide">
               অনুভূতি
             </span>
           </div>
-          <h2 className={`font-display text-4xl leading-tight text-foreground text-balance md:text-7xl ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
+          <h2 className={`font-display text-3xl sm:text-5xl md:text-7xl leading-tight text-foreground text-balance ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
             Words from our collectors
           </h2>
         </div>

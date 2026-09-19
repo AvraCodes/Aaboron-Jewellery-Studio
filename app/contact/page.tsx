@@ -19,9 +19,9 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-transparent">
       <Header />
-      <div className="pt-32 pb-24">
-        <div className="max-w-2xl mx-auto px-6 lg:px-8">
-          <div className="bg-card/75 backdrop-blur-md border border-border/40 rounded-3xl p-8 sm:p-12 boty-shadow">
+      <div className="pt-24 sm:pt-32 pb-16 sm:pb-24">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-card/75 backdrop-blur-md border border-border/40 rounded-2xl sm:rounded-3xl p-5 sm:p-10 md:p-12 boty-shadow card-hover-lift">
             <div className="mb-10">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-sm tracking-[0.3em] uppercase text-primary font-medium block">

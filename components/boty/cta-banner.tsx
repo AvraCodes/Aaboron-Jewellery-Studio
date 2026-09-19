@@ -31,11 +31,11 @@ export function CTABanner() {
   }, [])
 
   return (
-    <section className="py-24 bg-transparent">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-14 sm:py-24 bg-transparent">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={bannerRef}
-          className={`rounded-3xl p-8 sm:p-12 md:p-16 relative overflow-hidden min-h-[420px] border border-stone-700/30 shadow-2xl backdrop-blur-xl transition-all duration-700 ease-out bg-[#221c17]/85 ${
+          className={`rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-16 relative overflow-hidden min-h-[380px] sm:min-h-[420px] border border-stone-700/30 shadow-2xl backdrop-blur-xl transition-all duration-700 ease-out bg-[#221c17]/85 card-hover-lift ${
             isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`}
         >
@@ -56,27 +56,27 @@ export function CTABanner() {
           <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-[#4F5B3A]/30 blur-3xl pointer-events-none z-0" />
 
           {/* Content Layout */}
-          <div className="relative z-10 grid md:grid-cols-12 gap-8 items-center">
+          <div className="relative z-10 grid md:grid-cols-12 gap-6 sm:gap-8 items-center">
             {/* Left Column */}
             <div className="md:col-span-7 text-left">
-              <span className="text-xs uppercase tracking-[0.25em] text-[#d9a07a] font-medium block mb-4">
+              <span className="text-xs uppercase tracking-[0.25em] text-[#d9a07a] font-medium block mb-3 sm:mb-4">
                 Custom Orders
               </span>
 
-              <h3 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white mb-2 leading-[1.1] tracking-tight">
+              <h3 className="font-display text-3xl sm:text-5xl lg:text-6xl text-white mb-1.5 sm:mb-2 leading-[1.1] tracking-tight">
                 Something special
               </h3>
-              <h4 className="font-accent italic text-3xl sm:text-4xl lg:text-5xl text-[#eedac5] mb-6 font-normal">
+              <h4 className="font-accent italic text-2xl sm:text-4xl lg:text-5xl text-[#eedac5] mb-4 sm:mb-6 font-normal">
                 in mind?
               </h4>
 
-              <p className="text-stone-200/90 text-base sm:text-lg leading-relaxed mb-8 max-w-md font-light">
+              <p className="text-stone-200/90 text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8 max-w-md font-light">
                 Commission a custom piece — made exactly the way you imagine it. From hand-sculpted terracotta hues to bespoke oxidised metal designs, we shape each order individually.
               </p>
 
               <Link
                 href="/custom-orders"
-                className="group inline-flex items-center gap-3 bg-[#ede6dc] hover:bg-white text-stone-900 px-8 py-4 rounded-full text-sm font-medium tracking-wide boty-transition shadow-lg shadow-black/30 hover:scale-[1.02]"
+                className="group inline-flex items-center justify-center gap-3 bg-[#ede6dc] hover:bg-white text-stone-900 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-medium tracking-wide boty-transition shadow-lg shadow-black/30 hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
               >
                 <span>Commission a custom piece</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 group-hover:text-primary boty-transition" />

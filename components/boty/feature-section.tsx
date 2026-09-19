@@ -69,16 +69,16 @@ export function FeatureSection() {
   }, [])
 
   return (
-    <section className="py-24 bg-transparent">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-14 sm:py-24 bg-transparent">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Bento Grid */}
         <div
           ref={bentoRef}
-          className="grid md:grid-cols-4 mb-20 md:grid-rows-[300px_300px] gap-6"
+          className="grid grid-cols-1 md:grid-cols-4 mb-14 sm:mb-20 md:grid-rows-[300px_300px] gap-4 sm:gap-6"
         >
           {/* Left Large Block — Video with Overlay Card */}
           <div
-            className={`relative rounded-3xl overflow-hidden bg-card h-[500px] md:h-auto md:col-span-2 md:row-span-2 transition-all duration-700 ease-out border border-border/40 ${
+            className={`relative rounded-2xl sm:rounded-3xl overflow-hidden bg-card h-[360px] sm:h-[450px] md:h-auto md:col-span-2 md:row-span-2 transition-all duration-700 ease-out border border-border/40 card-hover-lift ${
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             style={{ transitionDelay: '0ms' }}
@@ -93,13 +93,13 @@ export function FeatureSection() {
               <source src="/videos/handcrafted-jewellery.mp4" type="video/mp4" />
             </video>
             {/* Translucent Overlay Card */}
-            <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 bg-card/85 backdrop-blur-md p-6 shadow-lg rounded-2xl border border-border/40">
+            <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8 bg-card/85 backdrop-blur-md p-4 sm:p-6 shadow-lg rounded-2xl border border-border/40">
               <div className="flex items-start gap-3">
                 <div>
-                  <h3 className="text-xl text-foreground mb-1 font-serif font-medium">
-                    Each piece, <span className="font-script text-primary text-3xl font-normal">made once</span>
+                  <h3 className="text-lg sm:text-xl text-foreground mb-1 font-serif font-medium">
+                    Each piece, <span className="font-script text-primary text-2xl sm:text-3xl font-normal">made once</span>
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     Formed by human touch, no two pieces are ever identical. Every curve carries the rhythm of the artisan&apos;s hands.
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export function FeatureSection() {
 
           {/* Top Right — Craft philosophy */}
           <div
-            className={`rounded-3xl p-6 md:p-8 flex flex-col justify-center md:col-span-2 relative overflow-hidden transition-all duration-700 ease-out border border-border/40 ${
+            className={`rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col justify-center md:col-span-2 min-h-[220px] sm:min-h-[280px] relative overflow-hidden transition-all duration-700 ease-out border border-border/40 card-hover-lift ${
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             style={{ transitionDelay: '100ms' }}
@@ -122,23 +122,23 @@ export function FeatureSection() {
             />
             <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-[1px] z-0" />
             <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl text-white mb-1 font-serif">
+              <h3 className="text-2xl sm:text-4xl text-white mb-1 font-serif">
                 Slow craft
               </h3>
-              <h4 className="text-2xl md:text-3xl text-white/70 mb-4 font-script">
+              <h4 className="text-xl sm:text-3xl text-white/70 mb-3 sm:mb-4 font-script">
                 Quiet luxury
               </h4>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-white/90 text-sm">
-                  <Hand className="w-4 h-4 flex-shrink-0 text-amber-200" />
+              <div className="space-y-1.5 sm:space-y-2">
+                <div className="flex items-center gap-2 text-white/90 text-xs sm:text-sm">
+                  <Hand className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 text-amber-200" />
                   <span>Hand-shaped from clay</span>
                 </div>
-                <div className="flex items-center gap-2 text-white/90 text-sm">
-                  <Flame className="w-4 h-4 flex-shrink-0 text-amber-200" />
+                <div className="flex items-center gap-2 text-white/90 text-xs sm:text-sm">
+                  <Flame className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 text-amber-200" />
                   <span>Kiln-fired for durability</span>
                 </div>
-                <div className="flex items-center gap-2 text-white/90 text-sm">
-                  <Palette className="w-4 h-4 flex-shrink-0 text-amber-200" />
+                <div className="flex items-center gap-2 text-white/90 text-xs sm:text-sm">
+                  <Palette className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 text-amber-200" />
                   <span>Hand-painted, one at a time</span>
                 </div>
               </div>
@@ -147,7 +147,7 @@ export function FeatureSection() {
 
           {/* Bottom Right — Process video */}
           <div
-            className={`rounded-3xl p-6 md:p-8 flex flex-col justify-center relative overflow-hidden bg-card md:col-span-2 transition-all duration-700 ease-out border border-border/40 ${
+            className={`rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col justify-center min-h-[200px] sm:min-h-[260px] relative overflow-hidden bg-card md:col-span-2 transition-all duration-700 ease-out border border-border/40 card-hover-lift ${
               isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             style={{ transitionDelay: '200ms' }}
@@ -163,13 +163,13 @@ export function FeatureSection() {
             </video>
             <div className="absolute inset-0 bg-stone-900/65 backdrop-blur-[1px]" />
             <div className="relative z-10 flex flex-col justify-center h-full text-left items-start">
-              <div className="inline-flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-amber-400/20">
-                <Flame className="w-5 h-5 text-amber-300" />
+              <div className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 mb-2 sm:mb-3 rounded-full bg-amber-400/20">
+                <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-amber-300" />
               </div>
-              <h3 className="font-sans text-xs uppercase tracking-[0.2em] mb-1 text-white/80">
+              <h3 className="font-sans text-[11px] sm:text-xs uppercase tracking-[0.2em] mb-1 text-white/80">
                 Fired &amp; Finished
               </h3>
-              <h4 className="text-2xl md:text-3xl mb-2 text-white font-serif">
+              <h4 className="text-xl sm:text-3xl mb-1 sm:mb-2 text-white font-serif">
                 Sculpted for timeless grace
               </h4>
             </div>
@@ -179,11 +179,11 @@ export function FeatureSection() {
         {/* Maker Story — two-column */}
         <div
           ref={videoSectionRef}
-          className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center my-0 py-20"
+          className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center my-0 py-10 sm:py-16 lg:py-20"
         >
           {/* Maker Image with subtle badge */}
           <div
-            className={`relative aspect-[4/5] rounded-3xl overflow-hidden bg-card boty-shadow transition-all duration-700 ease-out border border-border/40 ${
+            className={`relative aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden bg-card boty-shadow transition-all duration-700 ease-out border border-border/40 card-hover-lift ${
               isVideoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
           >
@@ -194,11 +194,11 @@ export function FeatureSection() {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-            <div className="absolute bottom-8 left-8 right-8 text-white">
-              <span className="font-bengali text-xl sm:text-2xl block text-amber-200/90 mb-1 select-none">
+            <div className="absolute bottom-5 left-5 right-5 sm:bottom-8 sm:left-8 sm:right-8 text-white">
+              <span className="font-bengali text-lg sm:text-2xl block text-amber-200/90 mb-1 select-none">
                 হাতে তৈরি শিল্প
               </span>
-              <p className="font-serif text-xl sm:text-2xl">The intimate touch of Bengal terracotta</p>
+              <p className="font-serif text-lg sm:text-2xl">The intimate touch of Bengal terracotta</p>
             </div>
           </div>
 
@@ -210,34 +210,34 @@ export function FeatureSection() {
             }`}
             style={{ transitionDelay: '100ms' }}
           >
-            <div className="flex items-center gap-2 mb-4">
-              <span className={`text-sm tracking-[0.3em] uppercase text-primary block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
+            <div className="flex items-center gap-2 mb-3 sm:mb-4">
+              <span className={`text-xs sm:text-sm tracking-[0.3em] uppercase text-primary block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
                 The Maker
               </span>
               <span className="text-foreground/30 text-xs">·</span>
-              <span className="font-bengali text-xl sm:text-2xl text-primary font-medium select-none leading-none tracking-wide">
+              <span className="font-bengali text-lg sm:text-2xl text-primary font-medium select-none leading-none tracking-wide">
                 আমাদের গল্প
               </span>
             </div>
-            <h2 className={`font-serif text-4xl leading-tight text-foreground mb-6 text-balance md:text-7xl ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
+            <h2 className={`font-serif text-3xl sm:text-5xl lg:text-7xl leading-tight text-foreground mb-4 sm:mb-6 text-balance ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
               Born from earth, shaped by devotion
             </h2>
-            <p className={`text-lg text-muted-foreground leading-relaxed mb-10 max-w-md ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.6s', animationFillMode: 'forwards' } : {}}>
+            <p className={`text-sm sm:text-lg text-muted-foreground leading-relaxed mb-8 sm:mb-10 max-w-md ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.6s', animationFillMode: 'forwards' } : {}}>
               Aaboron was founded in Kolkata with a simple desire: to bring the poetic warmth of Bengal&apos;s terracotta and artisanal metalcraft into everyday adornments. Each creation is born from slow, meditative craftsmanship—celebrating natural textures and the quiet luxury of genuine handmade art.
             </p>
 
-            {/* Feature Cards — Translucent */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            {/* Feature Cards — Translucent & Responsive */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="group p-5 boty-transition hover:scale-[1.02] rounded-2xl bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 shadow-xs"
+                  className="group p-4 sm:p-5 boty-transition hover:scale-[1.02] rounded-2xl bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 shadow-xs card-hover-lift"
                 >
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full mb-3 group-hover:bg-primary/20 boty-transition bg-primary/10">
-                    <feature.icon className="w-5 h-5 text-primary group-hover:scale-110 boty-transition" />
+                  <div className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full mb-2.5 sm:mb-3 group-hover:bg-primary/20 boty-transition bg-primary/10">
+                    <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary group-hover:scale-110 boty-transition" />
                   </div>
-                  <h3 className="font-medium text-foreground mb-1 group-hover:text-primary boty-transition">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+                  <h3 className="font-medium text-foreground text-sm sm:text-base mb-1 group-hover:text-primary boty-transition">{feature.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
               ))}
             </div>

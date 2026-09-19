@@ -23,30 +23,30 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full pt-20 mr-14 lg:mr-0">
+      <div className="relative z-10 w-full pt-28 pb-14 sm:pt-32 sm:pb-20 lg:py-0">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="w-full lg:max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-            <div className="flex items-center justify-center lg:justify-start gap-2.5 mb-6 animate-blur-in opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-              <span className="text-xs uppercase tracking-[0.25em] text-foreground/80 font-medium">
+            <div className="inline-flex items-center justify-center lg:justify-start gap-2.5 mb-6 px-4 py-1.5 rounded-full bg-background/60 backdrop-blur-md border border-border/40 animate-float shadow-xs">
+              <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-foreground/85 font-medium">
                 Handmade Jewellery Studio
               </span>
               <span className="text-foreground/40 font-light">·</span>
-              <span className="font-bengali text-xl sm:text-2xl text-primary font-medium select-none leading-none tracking-wide">
+              <span className="font-bengali text-lg sm:text-2xl text-primary font-medium select-none leading-none tracking-wide">
                 বাংলা ঐতিহ্য
               </span>
             </div>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 text-balance text-black">
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl leading-[1.08] mb-5 text-balance text-black">
               <span className="font-display block animate-blur-in opacity-0 font-semibold" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>Crafted with</span>
-              <span className="font-script text-primary block animate-blur-in opacity-0 xl:text-9xl text-7xl font-normal pt-1" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>intention.</span>
+              <span className="font-script text-primary block animate-blur-in opacity-0 text-6xl sm:text-8xl xl:text-9xl font-normal pt-1" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>intention.</span>
             </h2>
-            <p className="text-lg leading-relaxed mb-10 max-w-md mx-auto lg:mx-0 text-black animate-blur-in opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
-              <span className="font-accent italic text-foreground/75 block text-base mb-1">Rooted in Bengal&apos;s timeless artisanal heritage —</span>
+            <p className="text-base sm:text-lg leading-relaxed mb-8 sm:mb-10 max-w-md mx-auto lg:mx-0 text-black animate-blur-in opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
+              <span className="font-accent italic text-foreground/80 block text-base mb-1">Rooted in Bengal&apos;s timeless artisanal heritage —</span>
               Each piece is shaped by hand, unhurried, considered, and quietly yours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-blur-in opacity-0" style={{ animationDelay: '1s', animationFillMode: 'forwards' }}>
               <Link
                 href="/shop"
-                className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full text-sm tracking-wide boty-transition hover:bg-primary/90 boty-shadow"
+                className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full text-sm tracking-wide boty-transition hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] boty-shadow w-full sm:w-auto"
               >
                 Shop the Collection
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 boty-transition" />

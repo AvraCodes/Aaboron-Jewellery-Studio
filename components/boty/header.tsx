@@ -12,26 +12,26 @@ export function Header() {
   const { setIsOpen, itemCount } = useCart()
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
-      <nav className="max-w-7xl mx-auto px-6 lg:px-8 backdrop-blur-md rounded-lg py-0 my-0 animate-scale-fade-in bg-[rgba(255,255,255,0.4)] border border-[rgba(255,255,255,0.32)]" style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 0px 10px 50px' }}>
-        <div className="flex items-center justify-between h-[68px]">
+    <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-4 pt-3 sm:pt-4">
+      <nav className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 backdrop-blur-md rounded-2xl py-0 my-0 animate-scale-fade-in bg-[rgba(255,255,255,0.7)] border border-border/40 shadow-sm" style={{ boxShadow: 'rgba(0, 0, 0, 0.06) 0px 10px 40px' }}>
+        <div className="flex items-center justify-between h-[60px] sm:h-[68px]">
           {/* Left Side: Brand Logo & Wordmark */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group">
             <Image
               src="/images/logo/aaboron-logo.png"
               alt="Aaboron Jewellery Studio"
               width={44}
               height={44}
-              className="h-10 w-10 sm:h-11 sm:w-11 rounded-full object-cover shadow-sm ring-1 ring-primary/25 group-hover:scale-105 boty-transition"
+              className="h-9 w-9 sm:h-11 sm:w-11 rounded-full object-cover shadow-xs ring-1 ring-primary/25 group-hover:scale-105 boty-transition"
               priority
             />
-            <span className="font-display text-2xl sm:text-3xl tracking-wide text-foreground group-hover:text-primary whitespace-nowrap boty-transition">
+            <span className="font-display text-xl sm:text-3xl tracking-wide text-foreground group-hover:text-primary whitespace-nowrap boty-transition">
               Aaboron
             </span>
           </Link>
 
           {/* Right Side: Navigation & Cart Action */}
-          <div className="flex items-center gap-6 lg:gap-8">
+          <div className="flex items-center gap-4 sm:gap-6 lg:gap-8">
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
               <Link
@@ -65,7 +65,7 @@ export function Header() {
               <span
                 className={`ml-1.5 px-1.5 py-0.5 text-xs font-semibold rounded-full boty-transition ${
                   itemCount > 0
-                    ? "bg-primary text-primary-foreground min-w-[20px] text-center shadow-sm"
+                    ? "bg-primary text-primary-foreground min-w-[20px] text-center shadow-xs animate-pulse-soft"
                     : "bg-muted text-muted-foreground"
                 }`}
               >
@@ -90,27 +90,27 @@ export function Header() {
         {/* Mobile Navigation */}
         <div
           className={`lg:hidden overflow-hidden boty-transition ${
-            isMenuOpen ? "max-h-64 pb-6" : "max-h-0"
+            isMenuOpen ? "max-h-64 pb-5" : "max-h-0"
           }`}
         >
-          <div className="flex flex-col gap-4 pt-4 border-t border-border/50">
+          <div className="flex flex-col gap-3 pt-3 border-t border-border/40">
             <Link
               href="/shop"
-              className="text-sm tracking-wide text-foreground/70 hover:text-foreground boty-transition"
+              className="text-base font-medium tracking-wide text-foreground/80 hover:text-primary py-1 boty-transition"
               onClick={() => setIsMenuOpen(false)}
             >
               Shop
             </Link>
             <Link
               href="/about"
-              className="text-sm tracking-wide text-foreground/70 hover:text-foreground boty-transition"
+              className="text-base font-medium tracking-wide text-foreground/80 hover:text-primary py-1 boty-transition"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/contact"
-              className="text-sm tracking-wide text-foreground/70 hover:text-foreground boty-transition"
+              className="text-base font-medium tracking-wide text-foreground/80 hover:text-primary py-1 boty-transition"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact

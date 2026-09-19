@@ -52,25 +52,27 @@ export function TrustBadges() {
   }, [])
 
   return (
-    <section className="py-20 bg-transparent">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-12 sm:py-20 bg-transparent">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={sectionRef}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6"
         >
           {badges.map((badge, index) => (
             <div
               key={badge.title}
-              className={`group bg-card/70 backdrop-blur-md border border-border/40 hover:border-primary/40 hover:shadow-md p-6 lg:p-8 text-center rounded-2xl boty-transition ${
+              className={`group bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 hover:shadow-xl p-4 sm:p-6 lg:p-8 text-center rounded-2xl sm:rounded-3xl card-hover-lift boty-transition ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8'
               }`}
-              style={{ transitionDelay: `${index * 150}ms` }}
+              style={{ transitionDelay: `${index * 120}ms` }}
             >
-              <badge.icon className="text-primary/75 group-hover:text-primary group-hover:scale-105 boty-transition mb-4 mx-auto size-12" strokeWidth={1.2} />
-              <h3 className="font-serif text-foreground mb-2 text-2xl group-hover:text-primary boty-transition">{badge.title}</h3>
-              <p className="text-sm text-muted-foreground">{badge.description}</p>
+              <div className="inline-flex items-center justify-center size-12 sm:size-16 rounded-full bg-primary/10 group-hover:bg-primary/20 boty-transition mb-2.5 sm:mb-4">
+                <badge.icon className="text-primary group-hover:scale-110 boty-transition size-6 sm:size-8" strokeWidth={1.3} />
+              </div>
+              <h3 className="font-serif text-foreground mb-1 sm:mb-2 text-base sm:text-xl lg:text-2xl group-hover:text-primary boty-transition font-medium">{badge.title}</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-snug sm:leading-relaxed">{badge.description}</p>
             </div>
           ))}
         </div>

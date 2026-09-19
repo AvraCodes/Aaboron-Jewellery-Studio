@@ -85,14 +85,14 @@ export function ProductGrid() {
         </div>
 
         {/* Segmented Control */}
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex flex-wrap justify-center bg-card/80 backdrop-blur-md rounded-full p-1 gap-1 border border-border/40">
+        <div className="flex justify-center mb-8 sm:mb-12 overflow-x-auto px-2">
+          <div className="inline-flex flex-wrap sm:flex-nowrap justify-center bg-card/80 backdrop-blur-md rounded-full p-1 gap-1 border border-border/40 max-w-full">
             {CATEGORIES.map((category) => (
               <button
                 key={category.value}
                 type="button"
                 onClick={() => handleCategoryChange(category.value)}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-300 ${
                   selectedCategory === category.value
                     ? "bg-foreground text-background shadow-sm"
                     : "text-muted-foreground hover:text-foreground"
@@ -104,15 +104,15 @@ export function ProductGrid() {
           </div>
         </div>
 
-        {/* Product Grid - Center Aligned Tiles */}
+        {/* Product Grid - Responsive 2-Col Mobile / 4-Col Desktop */}
         <div
           ref={gridRef}
-          className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 max-w-6xl mx-auto"
         >
           {displayedProducts.map((product, index) => (
             <div
               key={`${selectedCategory}-${product.id}`}
-              className={`w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] max-w-[280px] transition-all duration-500 ease-out ${
+              className={`transition-all duration-500 ease-out ${
                 isVisible && !isTransitioning ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
               }`}
               style={{ transitionDelay: isTransitioning ? '0ms' : `${index * 80}ms` }}
@@ -121,7 +121,7 @@ export function ProductGrid() {
                 href={`/product/${product.id}`}
                 className="group block h-full"
               >
-                <div className="bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 rounded-3xl overflow-hidden shadow-xs hover:shadow-xl boty-transition group-hover:scale-[1.02] flex flex-col h-full">
+                <div className="bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xs hover:shadow-xl card-hover-lift boty-transition group-hover:scale-[1.01] flex flex-col h-full">
                   {/* Image */}
                   <div className="relative aspect-square bg-muted overflow-hidden">
                     <Image
@@ -133,19 +133,19 @@ export function ProductGrid() {
                     {/* Badge */}
                     {product.badge && (
                       <span
-                        className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs tracking-wide ${
+                        className={`absolute top-2.5 left-2.5 sm:top-4 sm:left-4 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs tracking-wide ${
                           product.badge === "New"
-                            ? "bg-primary/10 text-primary"
+                            ? "bg-primary/15 text-primary font-medium"
                             : "bg-accent text-accent-foreground"
                         }`}
                       >
                         {product.badge}
                       </span>
                     )}
-                    {/* Quick add button */}
+                    {/* Quick add button — accessible on touch and hover */}
                     <button
                       type="button"
-                      className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 boty-transition boty-shadow hover:bg-primary hover:text-primary-foreground group/btn"
+                      className="absolute bottom-2.5 right-2.5 sm:bottom-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center opacity-90 sm:opacity-0 sm:translate-y-2 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 boty-transition boty-shadow hover:bg-primary hover:text-primary-foreground group/btn"
                       onClick={(e) => {
                         e.preventDefault()
                         e.stopPropagation()
@@ -159,20 +159,20 @@ export function ProductGrid() {
                       }}
                       aria-label="Add to cart"
                     >
-                      <ShoppingBag className="w-4 h-4 text-foreground group-hover/btn:text-primary-foreground group-hover:text-primary transition-colors" />
+                      <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-foreground group-hover/btn:text-primary-foreground group-hover:text-primary transition-colors" />
                     </button>
                   </div>
 
                   {/* Info - Center Aligned */}
-                  <div className="p-5 text-center flex flex-col flex-grow items-center justify-between">
+                  <div className="p-3 sm:p-5 text-center flex flex-col flex-grow items-center justify-between">
                     <div>
-                      <h3 className="font-serif text-lg text-foreground mb-1 group-hover:text-primary boty-transition line-clamp-1">{product.name}</h3>
-                      <p className="text-xs text-muted-foreground mb-3 line-clamp-1">{product.tagline}</p>
+                      <h3 className="font-serif text-sm sm:text-lg text-foreground mb-1 group-hover:text-primary boty-transition line-clamp-1 font-medium">{product.name}</h3>
+                      <p className="text-[11px] sm:text-xs text-muted-foreground mb-2 sm:mb-3 line-clamp-1">{product.tagline}</p>
                     </div>
-                    <div className="flex items-center justify-center gap-2 pt-1 border-t border-border/20 w-full">
-                      <span className="font-medium text-foreground text-base">₹{product.price.toLocaleString("en-IN")}</span>
+                    <div className="flex items-center justify-center gap-1.5 sm:gap-2 pt-1.5 border-t border-border/20 w-full">
+                      <span className="font-semibold text-foreground text-sm sm:text-base">₹{product.price.toLocaleString("en-IN")}</span>
                       {product.originalPrice && (
-                        <span className="text-xs text-muted-foreground line-through">
+                        <span className="text-[11px] sm:text-xs text-muted-foreground line-through">
                           ₹{product.originalPrice.toLocaleString("en-IN")}
                         </span>
                       )}

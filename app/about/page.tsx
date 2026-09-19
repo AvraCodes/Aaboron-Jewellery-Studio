@@ -6,9 +6,9 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-transparent">
       <Header />
-      <div className="pt-32 pb-24">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <div className="bg-card/75 backdrop-blur-md border border-border/40 rounded-3xl p-8 sm:p-12 boty-shadow">
+      <div className="pt-24 sm:pt-32 pb-16 sm:pb-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-card/75 backdrop-blur-md border border-border/40 rounded-2xl sm:rounded-3xl p-5 sm:p-10 md:p-12 boty-shadow card-hover-lift">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Image */}
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-card border border-border/40 shadow-sm">
