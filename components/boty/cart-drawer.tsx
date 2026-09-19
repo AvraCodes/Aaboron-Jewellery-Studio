@@ -52,6 +52,7 @@ export function CartDrawer() {
                       src={item.image || "/placeholder.jpg"}
                       alt={item.name}
                       fill
+                      sizes="(max-width: 640px) 80px, 96px"
                       className="object-cover"
                     />
                   </div>

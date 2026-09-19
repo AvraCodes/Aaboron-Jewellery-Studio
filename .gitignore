@@ -36,3 +36,7 @@ pnpm-debug.log*
 Icon?
 .idea/
 .vscode/
+
+# Media originals backup
+media-originals/
+/media-originals/

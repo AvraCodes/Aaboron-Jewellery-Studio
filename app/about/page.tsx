@@ -19,9 +19,10 @@ export default function AboutPage() {
               {/* Image */}
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-card border border-border/40 shadow-sm">
                 <Image
-                  src="/images/products/clay-jewellery/clay-01.jpg"
+                  src="/images/products/clay-jewellery/clay-01.webp"
                   alt="Aaboron Artisan Handcrafted Studio"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 500px"
                   className="object-cover"
                   priority
                 />

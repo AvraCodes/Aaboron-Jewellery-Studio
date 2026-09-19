@@ -128,6 +128,7 @@ export function ProductGrid() {
                       src={product.image || "/placeholder.jpg"}
                       alt={product.name}
                       fill
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 270px"
                       className="object-cover boty-transition group-hover:scale-105"
                     />
                     {/* Badge */}

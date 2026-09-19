@@ -35,20 +35,33 @@ export function CTABanner() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={bannerRef}
-          className={`rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-16 relative overflow-hidden min-h-[380px] sm:min-h-[420px] border border-stone-700/30 shadow-2xl backdrop-blur-xl transition-all duration-700 ease-out bg-[#221c17]/85 card-hover-lift ${
+          className={`rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-16 relative overflow-hidden min-h-[380px] sm:min-h-[420px] border border-stone-700/30 shadow-2xl transition-all duration-700 ease-out bg-[#221c17]/90 card-hover-lift ${
             isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`}
         >
           {/* Subtle Crafting Video Layer inside the Card */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-20 filter saturate-[1.2] brightness-75 pointer-events-none"
-          >
-            <source src="/videos/artisanal-jewellery.mp4" type="video/mp4" />
-          </video>
+          {isVisible ? (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="none"
+              poster="/videos/artisanal-poster.webp"
+              className="absolute inset-0 w-full h-full object-cover opacity-20 filter saturate-[1.2] brightness-75 pointer-events-none"
+            >
+              <source src="/videos/artisanal-jewellery.webm" type="video/webm" />
+              <source src="/videos/artisanal-jewellery.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <Image
+              src="/videos/artisanal-poster.webp"
+              alt="Artisanal Jewellery Workshop"
+              fill
+              sizes="100vw"
+              className="object-cover opacity-20 filter saturate-[1.2] brightness-75 pointer-events-none"
+            />
+          )}
 
           {/* Deep Earthy Gradients: Terracotta & Forest Moss */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#291a14]/95 via-[#1d2719]/90 to-[#1b1915]/95 z-0" />
@@ -89,9 +102,10 @@ export function CTABanner() {
             <div className="md:col-span-5 hidden md:flex justify-end">
               <div className="relative w-64 h-72 rounded-2xl overflow-hidden border border-white/10 shadow-2xl rotate-1 hover:rotate-0 boty-transition">
                 <Image
-                  src="/images/products/clay-jewellery/clay-02.jpg"
+                  src="/images/products/clay-jewellery/clay-02.webp"
                   alt="Artisanal clay jewellery in making"
                   fill
+                  sizes="256px"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />

@@ -194,9 +194,9 @@ function ProductCard({
     <Link
       href={`/product/${product.id}`}
       className={`group transition-all duration-700 ease-out block h-full ${
-        isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        isVisible || index < 4 ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
       }`}
-      style={{ transitionDelay: `${index * 60}ms` }}
+      style={{ transitionDelay: index < 4 ? '0ms' : `${index * 60}ms` }}
     >
       <div className="bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xs hover:shadow-xl card-hover-lift boty-transition group-hover:scale-[1.01] flex flex-col h-full">
         {/* Image */}
@@ -204,7 +204,7 @@ function ProductCard({
           {/* Skeleton */}
           <div
             className={`absolute inset-0 bg-gradient-to-br from-muted via-muted/50 to-muted animate-pulse transition-opacity duration-500 ${
-              imageLoaded ? 'opacity-0' : 'opacity-100'
+              imageLoaded || index < 2 ? 'opacity-0' : 'opacity-100'
             }`}
           />
 
@@ -212,8 +212,10 @@ function ProductCard({
             src={product.image || "/placeholder.jpg"}
             alt={product.name}
             fill
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            priority={index < 2}
             className={`object-cover boty-transition group-hover:scale-105 transition-opacity duration-500 ${
-              imageLoaded ? 'opacity-100' : 'opacity-0'
+              imageLoaded || index < 2 ? 'opacity-100' : 'opacity-0'
             }`}
             onLoad={() => setImageLoaded(true)}
           />

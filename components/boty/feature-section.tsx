@@ -83,15 +83,28 @@ export function FeatureSection() {
             }`}
             style={{ transitionDelay: '0ms' }}
           >
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src="/videos/artisanal-jewellery.mp4" type="video/mp4" />
-            </video>
+            {isVisible ? (
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="none"
+                poster="/videos/artisanal-poster.webp"
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/videos/artisanal-jewellery.webm" type="video/webm" />
+                <source src="/videos/artisanal-jewellery.mp4" type="video/mp4" />
+              </video>
+            ) : (
+              <Image
+                src="/videos/artisanal-poster.webp"
+                alt="Artisanal Jewellery"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            )}
             {/* Translucent Overlay Card */}
             <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8 bg-card/85 backdrop-blur-md p-4 sm:p-6 shadow-lg rounded-2xl border border-border/40">
               <div className="flex items-start gap-3">
@@ -115,9 +128,10 @@ export function FeatureSection() {
             style={{ transitionDelay: '100ms' }}
           >
             <Image
-              src="/images/products/clay-jewellery/clay-02.jpg"
+              src="/images/products/clay-jewellery/clay-02.webp"
               alt="Aaboron handcrafted clay jewellery details"
               fill
+              sizes="(max-width: 768px) 100vw, 66vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-[1px] z-0" />
@@ -152,15 +166,28 @@ export function FeatureSection() {
             }`}
             style={{ transitionDelay: '200ms' }}
           >
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover scale-[1.02]"
-            >
-              <source src="/videos/terracotta-jewellery.mp4" type="video/mp4" />
-            </video>
+            {isVisible ? (
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="none"
+                poster="/videos/terracotta-poster.webp"
+                className="absolute inset-0 w-full h-full object-cover scale-[1.02]"
+              >
+                <source src="/videos/terracotta-jewellery.webm" type="video/webm" />
+                <source src="/videos/terracotta-jewellery.mp4" type="video/mp4" />
+              </video>
+            ) : (
+              <Image
+                src="/videos/terracotta-poster.webp"
+                alt="Terracotta Jewellery"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover scale-[1.02]"
+              />
+            )}
             <div className="absolute inset-0 bg-stone-900/65 backdrop-blur-[1px]" />
             <div className="relative z-10 flex flex-col justify-center h-full text-left items-start">
               <div className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 mb-2 sm:mb-3 rounded-full bg-amber-400/20">
@@ -189,9 +216,10 @@ export function FeatureSection() {
               }`}
             >
               <Image
-                src="/images/products/clay-jewellery/clay-01.jpg"
+                src="/images/products/clay-jewellery/clay-01.webp"
                 alt="Aaboron Artisan Jewellery Studio"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />

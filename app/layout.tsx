@@ -99,12 +99,15 @@ export default function RootLayout({
             loop
             muted
             playsInline
+            preload="metadata"
+            poster="/videos/terracotta-poster.webp"
             className="w-full h-full object-cover opacity-[0.20] saturate-[1.15] filter"
           >
+            <source src="/videos/terracotta-jewellery.webm" type="video/webm" />
             <source src="/videos/terracotta-jewellery.mp4" type="video/mp4" />
           </video>
           {/* Subtle warm earthy wash so text remains perfectly crisp and readable */}
-          <div className="absolute inset-0 bg-background/50 backdrop-blur-[0.5px]" />
+          <div className="absolute inset-0 bg-background/60" />
         </div>
 
         <div className="relative z-10 min-h-screen flex flex-col">
