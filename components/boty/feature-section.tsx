@@ -179,59 +179,63 @@ export function FeatureSection() {
         {/* Maker Story — two-column */}
         <div
           ref={videoSectionRef}
-          className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center my-0 py-10 sm:py-16 lg:py-20"
+          className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-stretch my-0 py-10 sm:py-16 lg:py-20"
         >
           {/* Maker Image with subtle badge */}
-          <div
-            className={`relative aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden bg-card boty-shadow transition-all duration-700 ease-out border border-border/40 card-hover-lift ${
-              isVideoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}
-          >
-            <Image
-              src="/images/products/clay-jewellery/clay-01.jpg"
-              alt="Aaboron Artisan Jewellery Studio"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-            <div className="absolute bottom-5 left-5 right-5 sm:bottom-8 sm:left-8 sm:right-8 text-white">
-              <span className="font-bengali text-lg sm:text-2xl block text-amber-200/90 mb-1 select-none">
-                হাতে তৈরি শিল্প
-              </span>
-              <p className="font-serif text-lg sm:text-2xl">The intimate touch of Bengal terracotta</p>
+          <div className="flex w-full">
+            <div
+              className={`relative w-full min-h-[340px] sm:min-h-[420px] aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-full rounded-2xl sm:rounded-3xl overflow-hidden bg-card boty-shadow transition-all duration-700 ease-out border border-border/40 card-hover-lift ${
+                isVideoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+              }`}
+            >
+              <Image
+                src="/images/products/clay-jewellery/clay-01.jpg"
+                alt="Aaboron Artisan Jewellery Studio"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5 sm:bottom-8 sm:left-8 sm:right-8 text-white">
+                <span className="font-bengali text-lg sm:text-2xl block text-amber-200/90 mb-1 select-none">
+                  হাতে তৈরি শিল্প
+                </span>
+                <p className="font-serif text-lg sm:text-2xl">The intimate touch of Bengal terracotta</p>
+              </div>
             </div>
           </div>
 
           {/* Content */}
           <div
             ref={headerRef}
-            className={`transition-all duration-700 ease-out ${
+            className={`flex flex-col justify-between h-full transition-all duration-700 ease-out ${
               isVideoVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{ transitionDelay: '100ms' }}
           >
-            <div className="flex items-center gap-2 mb-3 sm:mb-4">
-              <span className={`text-xs sm:text-sm tracking-[0.3em] uppercase text-primary block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
-                The Maker
-              </span>
-              <span className="text-foreground/30 text-xs">·</span>
-              <span className="font-bengali text-lg sm:text-2xl text-primary font-medium select-none leading-none tracking-wide">
-                আমাদের গল্প
-              </span>
+            <div className="mb-6 sm:mb-8">
+              <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                <span className={`text-xs sm:text-sm tracking-[0.3em] uppercase text-primary block ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.2s', animationFillMode: 'forwards' } : {}}>
+                  The Maker
+                </span>
+                <span className="text-foreground/30 text-xs">·</span>
+                <span className="font-bengali text-lg sm:text-2xl text-primary font-medium select-none leading-none tracking-wide">
+                  আমাদের গল্প
+                </span>
+              </div>
+              <h2 className={`font-serif text-3xl sm:text-5xl lg:text-6xl leading-tight text-foreground mb-4 sm:mb-5 text-balance ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
+                Born from earth, shaped by devotion
+              </h2>
+              <p className={`text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-xl ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.6s', animationFillMode: 'forwards' } : {}}>
+                Aaboron was founded in Kolkata with a simple desire: to bring the poetic warmth of Bengal&apos;s terracotta and artisanal metalcraft into everyday adornments. Each creation is born from slow, meditative craftsmanship—celebrating natural textures and the quiet luxury of genuine handmade art.
+              </p>
             </div>
-            <h2 className={`font-serif text-3xl sm:text-5xl lg:text-7xl leading-tight text-foreground mb-4 sm:mb-6 text-balance ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.4s', animationFillMode: 'forwards' } : {}}>
-              Born from earth, shaped by devotion
-            </h2>
-            <p className={`text-sm sm:text-lg text-muted-foreground leading-relaxed mb-8 sm:mb-10 max-w-md ${headerVisible ? 'animate-blur-in opacity-0' : 'opacity-0'}`} style={headerVisible ? { animationDelay: '0.6s', animationFillMode: 'forwards' } : {}}>
-              Aaboron was founded in Kolkata with a simple desire: to bring the poetic warmth of Bengal&apos;s terracotta and artisanal metalcraft into everyday adornments. Each creation is born from slow, meditative craftsmanship—celebrating natural textures and the quiet luxury of genuine handmade art.
-            </p>
 
             {/* Feature Cards — Translucent & Responsive */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="group p-4 sm:p-5 boty-transition hover:scale-[1.02] rounded-2xl bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 shadow-xs card-hover-lift"
+                  className="group p-4 sm:p-5 boty-transition hover:scale-[1.02] rounded-2xl bg-card/75 backdrop-blur-md border border-border/40 hover:border-primary/40 shadow-xs card-hover-lift flex flex-col justify-center"
                 >
                   <div className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full mb-2.5 sm:mb-3 group-hover:bg-primary/20 boty-transition bg-primary/10">
                     <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary group-hover:scale-110 boty-transition" />
